@@ -12,7 +12,9 @@ class FormOpprettBruker extends React.Component {
 
     handleSubmit = () => {
         if (this.state.password !== this.state.confPassword) {
-            alert("Password stemmer ikke");
+            document.getElementById("reg-bruker-msg").innerHTML = "Passord stemmer ikke"
+            this.changePassword("")
+            this.changeConfPassword("")
         } else {
 
             const requestOptions = {
@@ -59,7 +61,7 @@ class FormOpprettBruker extends React.Component {
         }
         fetch("http://localhost:8080/createUser", requestOptions)
             .then(response => response.text())
-            .then(data => document.getElementById("reg-bruker-msg-test").innerHTML = "Bruker [" + this.state.username + "] opprettet. Samme passord.")
+            .then(() => document.getElementById("reg-bruker-msg-test").innerHTML = "Bruker [" + this.state.username + "] opprettet. Samme passord.")
 
     }
 

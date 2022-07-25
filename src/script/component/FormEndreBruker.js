@@ -1,5 +1,5 @@
 import React from "react";
-import VisImage from "./VisImage";
+import ChangeProfilepicture from "./ChangeProfilepicture";
 
 class Form extends React.Component {
 
@@ -69,7 +69,7 @@ class Form extends React.Component {
 
     render() {
         return <div>
-            <VisImage refreshParent={this.props.refreshParent}/>
+            <ChangeProfilepicture refreshParent={this.props.refreshParent}/>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 this.handleSubmit()

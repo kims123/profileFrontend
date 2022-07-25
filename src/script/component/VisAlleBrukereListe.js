@@ -6,12 +6,12 @@ function VisAlleBrukereListe(props) {
     const [updateComponent, setUpdateComponent] = useState(true)
 
     useEffect(() => {
-        if(updateComponent) {
+        if (updateComponent) {
             fetchUserData()
             setUpdateComponent(false)
         }
 
-        if(props.refresh === false) {
+        if (props.refresh === false) {
             setUpdateComponent(true)
         }
     }, [props, updateComponent])
@@ -51,7 +51,6 @@ function VisAlleBrukereListe(props) {
             <p id="vis-alle-msg"></p>
 
             <div>
-
                 <table>
                     <thead>
                     <tr>
