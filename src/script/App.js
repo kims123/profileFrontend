@@ -57,15 +57,15 @@ function App() {
     const [showLoggInnForm, setShowLoggInnForm] = useState(false);
     const [erLoggedIn, setErLoggedIn] = useState(false);
     const [visAlleBrukere, setVisAlleBrukere] = useState(false);
-    const [oppdaterAlleBrukere, setOppdaterAlleBrukere] = useState(0);
     const [showProfile, setShowProfile] = useState(false);
-    const [token, setToken] = useState("")
+    const [showAnnet, setShowAnnet] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
         setVisAlleBrukere(false)
         setShowProfile(false)
         setShowOpprettBrukerForm(true)
+        setShowAnnet(false)
     }
 
     const visLoggInnForm = () => {
@@ -73,6 +73,7 @@ function App() {
         setVisAlleBrukere(false)
         setShowProfile(false)
         setShowLoggInnForm(true)
+        setShowAnnet(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -80,6 +81,7 @@ function App() {
         setShowOpprettBrukerForm(false)
         setShowProfile(false)
         setVisAlleBrukere(true)
+        setShowAnnet(false)
     }
 
     const loggInn = () => {
@@ -88,6 +90,7 @@ function App() {
         setVisAlleBrukere(false)
         setShowProfile(false)
         setErLoggedIn(true)
+        setShowAnnet(false)
     }
 
     const loggUt = () => {
@@ -97,6 +100,7 @@ function App() {
         setShowProfile(false)
         setErLoggedIn(false)
         setShowLoggInnForm(true)
+        setShowAnnet(false)
         document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
@@ -105,6 +109,15 @@ function App() {
         setShowOpprettBrukerForm(false)
         setVisAlleBrukere(false)
         setShowProfile(true)
+        setShowAnnet(false)
+    }
+
+    const visAnnet = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(true)
     }
 
 
@@ -123,6 +136,7 @@ function App() {
                     <Button nameone="Vis alle brukere" onClick={visAlleBrukereListe}/>
                     <Button nameone="Logg ut" onClick={loggUt}/>
                 </div>
+                <Button nameone="Annet" onClick={visAnnet} />
             </div>
             <div hidden={!showOpprettBrukerForm}>
                 <FormOpprettBruker />
@@ -137,7 +151,12 @@ function App() {
             </div>
 
             <div hidden={!showProfile}>
-                <Profil token={token} refresh={showProfile} />
+                <Profil refresh={showProfile} />
+            </div>
+
+            <div hidden={!showAnnet}>
+                <h2>Annet</h2>
+                <a href="https://kims123.github.io/ApplikasjonFrontend" target="_blank">FightClub</a>
             </div>
 
         </div>
