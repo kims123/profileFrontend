@@ -50,7 +50,7 @@ class FormLoggInn extends React.Component {
                 }}/><br/>
 
                 <label>Passord:</label> <br/>
-                <input type="text" value={this.state.password} required onChange={e => {
+                <input type="password" value={this.state.password} required onChange={e => {
                     this.changePassword(e.target.value)
                 }}/><br/>
 

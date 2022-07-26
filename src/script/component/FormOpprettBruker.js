@@ -60,9 +60,25 @@ class FormOpprettBruker extends React.Component {
             })
         }
         fetch("http://localhost:8080/createUser", requestOptions)
-            .then(response => response.text())
-            .then(() => document.getElementById("reg-bruker-msg-test").innerHTML = "Bruker [" + this.state.username + "] opprettet. Samme passord.")
-
+            .then(response => {
+                if (!response.ok) {
+                    throw response
+                } else {
+                    return response.text()
+                }
+            })
+            .then(() => {
+                document.getElementById("reg-bruker-msg").style.color = "black"
+                document.getElementById("reg-bruker-msg").innerHTML = "Bruker [" + this.state.username + "] opprettet. Samme passord."
+            })
+            .catch(error => {
+                document.getElementById("reg-bruker-msg").style.color = "red"
+                if (error.status === 400) {
+                    document.getElementById("reg-bruker-msg").innerHTML = "Bruker [" + this.state.username + "] finnes fra før"
+                } else {
+                    document.getElementById("reg-bruker-msg").innerHTML = error.message
+                }
+            })
     }
 
     render() {
@@ -74,7 +90,7 @@ class FormOpprettBruker extends React.Component {
 
                 <h2>Registrer bruker</h2>
 
-                <p id="reg-bruker-msg">Her skal det komme en tekst</p>
+                <p id="reg-bruker-msg">Infotekst for registrer bruker</p>
 
                 <label>Username: </label><br/>
                 <input type="text" value={this.state.username} required onChange={(e) => {
@@ -115,7 +131,6 @@ class FormOpprettBruker extends React.Component {
             }}>
 
                 <h2>Registrer testbruker</h2>
-                <p id="reg-bruker-msg-test">Her skal det komme en tekst</p>
 
                 <label>Username: </label><br/>
                 <input type="text" value={this.state.username} required onChange={(e) => {
