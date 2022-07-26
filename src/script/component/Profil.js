@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import FormEndreBruker from "./FormEndreBruker";
+import {properties} from "../properties";
 
 class Profil extends React.Component {
 
@@ -32,7 +33,7 @@ class Profil extends React.Component {
             body: localStorage.getItem("userToken")
         }
 
-        fetch("http://localhost:8080/user", requestOptions)
+        fetch(properties.hostUrl + "/user", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     document.getElementById("profil-msg").innerHTML = "Feil token"

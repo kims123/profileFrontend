@@ -1,4 +1,5 @@
 import React from "react";
+import {properties} from "../properties";
 
 class FormLoggInn extends React.Component {
 
@@ -20,7 +21,7 @@ class FormLoggInn extends React.Component {
             headers: {"Content-type": "Application/json"},
             body: JSON.stringify({username: this.state.username, password: this.state.password})
         }
-        fetch("http://localhost:8080/login", requestOptions)
+        fetch(properties.hostUrl + "/login", requestOptions)
             .then(async response => {
                 if (response.ok) {
                     return response.text()

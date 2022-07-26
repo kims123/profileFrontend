@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Button from "./Button";
+import {properties} from "../properties";
 
 function ChangeProfilepicture(props) {
     const [selectedImage, setSelectedImage] = useState()
@@ -17,7 +18,7 @@ function ChangeProfilepicture(props) {
                 method: "POST",
                 body: formData
             }
-            fetch("http://localhost:8080/changeProfilePicture", requestOptions)
+            fetch(properties.hostUrl + "/changeProfilePicture", requestOptions)
                 .then(response => response.text())
                 .then(() => {
                     document.getElementById("endre-bruker-msg").style.color = "black"

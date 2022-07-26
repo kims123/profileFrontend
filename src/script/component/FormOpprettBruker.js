@@ -1,4 +1,5 @@
 import React from "react";
+import {properties} from "../properties";
 
 class FormOpprettBruker extends React.Component {
 
@@ -27,7 +28,7 @@ class FormOpprettBruker extends React.Component {
                     age: this.state.age
                 })
             }
-            fetch("http://localhost:8080/createUser", requestOptions)
+            fetch(properties.hostUrl + "/createUser", requestOptions)
                 .then(response => response.text())
                 .then(data => document.getElementById("reg-bruker-msg").innerHTML = data)
         }
@@ -59,7 +60,7 @@ class FormOpprettBruker extends React.Component {
                 age: 36
             })
         }
-        fetch("http://localhost:8080/createUser", requestOptions)
+        fetch(properties.hostUrl + "/createUser", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response

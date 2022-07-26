@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {properties} from "../properties";
 
 function VisAlleBrukereListe(props) {
 
@@ -26,7 +27,7 @@ function VisAlleBrukereListe(props) {
             body: localStorage.getItem("userToken")
         }
 
-        fetch("http://localhost:8080/allUsers", requestOptions)
+        fetch(properties.hostUrl + "/allUsers", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response
