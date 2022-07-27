@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {properties} from "../properties";
+import ProfilInfo from "./ProfilInfo";
+import Button from "./Button";
 
 function VisAlleBrukereListe(props) {
 
     const [users, setUsers] = useState([])
+    const [highlightedUser, setHighlightedUser] = useState("")
     const [updateComponent, setUpdateComponent] = useState(true)
+    const [showProfileInfo, setShowProfileInfo] = useState(false);
+    const [refreshProfileInfo, setRefreshProfileInfo] = useState(false);
 
     useEffect(() => {
         if (updateComponent) {
@@ -46,6 +51,18 @@ function VisAlleBrukereListe(props) {
             })
     }
 
+    function showProfil(user) {
+        console.log("Show profil info for: " + user.username)
+        setShowProfileInfo(true)
+        setRefreshProfileInfo(!refreshProfileInfo)
+        setHighlightedUser(user)
+    }
+
+    function getHighlightedUser() {
+        console.log("HighlightedUser: " + highlightedUser)
+        return highlightedUser
+    }
+
     return (
         <div>
             <h2>Brukernavn</h2>
@@ -61,7 +78,7 @@ function VisAlleBrukereListe(props) {
                     </thead>
                     <tbody>
                     {users.map((user) => (
-                        <tr key={user.username}>
+                        <tr key={user.username} onClick={() => showProfil(user)}>
                             <td>{user.username}</td>
                             <td>{user.age}</td>
                         </tr>
@@ -69,6 +86,12 @@ function VisAlleBrukereListe(props) {
                     </tbody>
                 </table>
             </div>
+
+            <div hidden={!showProfileInfo}>
+                <ProfilInfo highlightedUser={getHighlightedUser()} />
+                <Button nameone="Lukk" onClick={() => setShowProfileInfo(false)}></Button>
+            </div>
+
         </div>
     )
 }
