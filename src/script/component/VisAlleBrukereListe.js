@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {properties} from "../properties";
 import ProfilInfo from "./ProfilInfo";
 import Button from "./Button";
+import '../../css/VisAlleBrukere.css';
 
 function VisAlleBrukereListe(props) {
 
