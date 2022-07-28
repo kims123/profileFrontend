@@ -1,6 +1,10 @@
-td:hover {
-    text-decoration: underline;
+.td-link:hover {
     cursor: pointer;
+    background-color: lawngreen;
+}
+
+.td-link {
+    border: 2px solid black;
 }
 
 td {
@@ -10,4 +14,12 @@ td {
 
 table {
     background-color: lightblue;
+}
+
+.child-component {
+    flex: 1;
+}
+
+.parent-component {
+    display: flex;
 }

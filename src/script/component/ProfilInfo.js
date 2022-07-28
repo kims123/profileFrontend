@@ -25,7 +25,7 @@ class ProfilInfo extends React.Component {
         return (
             <div>
                 <div>
-                    <h2 id="profilinfo-headline">'s profils info</h2>
+                    <h2 id="profilinfo-headline">{this.state.highlightedUser.username}'s profil info</h2>
 
                     <img id="profilinfo-image" alt="not found" width={"250px"}
                          src={this.state.imageData}></img>

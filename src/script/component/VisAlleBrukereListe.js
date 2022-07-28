@@ -65,34 +65,35 @@ function VisAlleBrukereListe(props) {
     }
 
     return (
-        <div>
-            <h2>Brukernavn</h2>
-            <p id="vis-alle-msg"></p>
+        <div className="parent-component">
+            <div className="child-component">
+                <h2>Brukernavn</h2>
+                <p id="vis-alle-msg"></p>
 
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Age</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {users.map((user) => (
-                        <tr key={user.username} onClick={() => showProfil(user)}>
-                            <td>{user.username}</td>
-                            <td>{user.age}</td>
+                <div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Age</th>
                         </tr>
-                    ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        {users.map((user) => (
+                            <tr key={user.username}>
+                                <td className="td-link" onClick={() => showProfil(user)}>{user.username}</td>
+                                <td>{user.age}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <div hidden={!showProfileInfo}>
-                <ProfilInfo highlightedUser={getHighlightedUser()} />
+            <div className="child-component"
+                 hidden={!showProfileInfo}>
+                <ProfilInfo highlightedUser={getHighlightedUser()}/>
                 <Button nameone="Lukk" onClick={() => setShowProfileInfo(false)}></Button>
             </div>
-
         </div>
     )
 }
