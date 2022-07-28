@@ -1,5 +1,6 @@
 import React from "react";
 import {properties} from "../properties";
+import ActionButton from "./ActionButton";
 
 class FormLoggInn extends React.Component {
 
@@ -55,7 +56,7 @@ class FormLoggInn extends React.Component {
                     this.changePassword(e.target.value)
                 }}/><br/>
 
-                <button type="submit" className="menu-button">Logg inn</button>
+                <ActionButton name="Logg inn" onClick="submit"/>
 
             </form>
         </div>

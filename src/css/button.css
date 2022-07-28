@@ -14,9 +14,27 @@
     color: white;
 }
 
-.menu-button:active {
+.menu-button:active, .action-button:active {
     transition: 0s;
     position: relative;
     top: 3px;
     background-color: darkgreen;
+}
+
+
+.action-button:hover {
+    background-color: green;
+    color: white;
+}
+
+
+.action-button {
+    border: 1px solid;
+    padding: 15px;
+    background-color: lawngreen;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
 }

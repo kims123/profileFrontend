@@ -92,7 +92,7 @@ function VisAlleBrukereListe(props) {
             <div className="child-component"
                  hidden={!showProfileInfo}>
                 <ProfilInfo highlightedUser={getHighlightedUser()}/>
-                <Button nameone="Lukk" onClick={() => setShowProfileInfo(false)}></Button>
+                <Button name="Lukk" onClick={() => setShowProfileInfo(false)}></Button>
             </div>
         </div>
     )

@@ -1,13 +1,13 @@
 import '../css/App.css';
 import Button from "./component/Button";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../css/button.css"
 import FormOpprettBruker from "./component/FormOpprettBruker";
 import FormLoggInn from "./component/FormLoggInn";
 import VisAlleBrukereListe from "./component/VisAlleBrukereListe";
 import Profil from "./component/Profil";
-import React from "react"
 import {properties} from "./properties";
+import ActionButton from "./component/ActionButton";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
         fetch(properties.hostUrl + "/isLoggedInn", requestOptions)
             .then(response => {
-                if(response.ok){
+                if (response.ok) {
                     return response;
                 } else {
                     throw response;
@@ -40,7 +40,7 @@ function App() {
 
         fetch(properties.hostUrl + "/logoutUser", requestOptions)
             .then(response => {
-                if(response.ok){
+                if (response.ok) {
                     return response;
                 } else {
                     throw response;
@@ -128,19 +128,23 @@ function App() {
 
             <div className="nav-menu">
                 <div hidden={erLoggedIn}>
-                    <Button nameone="Opprett bruker" onClick={visOpprettBrukerForm}/>
-                    <Button nameone="Logg inn" onClick={visLoggInnForm}/>
+                    <Button name="Opprett bruker" onClick={visOpprettBrukerForm}/>
+                    <Button name="Logg inn" onClick={visLoggInnForm}/>
                 </div>
 
                 <div hidden={!erLoggedIn}>
-                    <Button nameone="Profile" onClick={visProfil} />
-                    <Button nameone="Vis alle brukere" onClick={visAlleBrukereListe}/>
-                    <Button nameone="Logg ut" onClick={loggUt}/>
+                    <Button name="Profile" onClick={visProfil}/>
+                    <Button name="Vis alle brukere" onClick={visAlleBrukereListe}/>
                 </div>
-                <Button nameone="Annet" onClick={visAnnet} />
+                <Button name="Annet" onClick={visAnnet}/>
+
+                <div hidden={!erLoggedIn}>
+                    <ActionButton name="Logg ut" onClick={loggUt}/>
+                </div>
+
             </div>
             <div hidden={!showOpprettBrukerForm}>
-                <FormOpprettBruker />
+                <FormOpprettBruker/>
             </div>
 
             <div hidden={!showLoggInnForm}>
@@ -148,11 +152,11 @@ function App() {
             </div>
 
             <div hidden={!visAlleBrukere}>
-                <VisAlleBrukereListe refresh={visAlleBrukere}  />
+                <VisAlleBrukereListe refresh={visAlleBrukere}/>
             </div>
 
             <div hidden={!showProfile}>
-                <Profil refresh={showProfile} />
+                <Profil refresh={showProfile}/>
             </div>
 
             <div hidden={!showAnnet}>

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import FormEndreBruker from "./FormEndreBruker";
 import {properties} from "../properties";
+import ActionButton from "./ActionButton";
 
 class Profil extends React.Component {
 
@@ -75,7 +76,7 @@ class Profil extends React.Component {
                     <p id="profil-text-info-username">Text text text</p>
                     <p id="profil-text-info-email">Text text text</p>
                     <p id="profil-text-info-age">Text text text</p>
-                    <Button nameone="Edit profile" onClick={this.showEditProfile}/>
+                    <ActionButton name="Edit profile" onClick={this.showEditProfile}/>
                 </div>
 
                 <div hidden={!this.state.showOpprettBrukerForm}>

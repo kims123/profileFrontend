@@ -1,6 +1,7 @@
 import React from "react";
 import ChangeProfilepicture from "./ChangeProfilepicture";
 import {properties} from "../properties";
+import ActionButton from "./ActionButton";
 
 class Form extends React.Component {
 
@@ -116,7 +117,7 @@ class Form extends React.Component {
                 }}/>
                 <br/>
 
-                <button type="submit" value="Knapp submit" className="menu-button">Endre</button>
+                <ActionButton name="Endre" onClick="submit" />
             </form>
         </div>
     }

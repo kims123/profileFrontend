@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Button from "./Button";
 import {properties} from "../properties";
+import ActionButton from "./ActionButton";
 
 function ChangeProfilepicture(props) {
     const [selectedImage, setSelectedImage] = useState()
@@ -36,7 +37,7 @@ function ChangeProfilepicture(props) {
                 <div>
                     <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)}/>
                     <br/>
-                    <Button nameone="Remove" onClick={() => setSelectedImage(null)}></Button>
+                    <Button name="Remove" onClick={() => setSelectedImage(null)}></Button>
                 </div>
             )}
             <br/>
@@ -50,7 +51,7 @@ function ChangeProfilepicture(props) {
                 }}
             />
 
-            <Button nameone="Oppdater profilbilde" onClick={oppdaterProfilbilde}/>
+            <ActionButton name="Oppdater profilbilde" onClick={oppdaterProfilbilde}/>
         </div>
     )
 }
