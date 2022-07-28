@@ -38,6 +38,8 @@ function ChangeProfilepicture(props) {
                     <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)}/>
                     <br/>
                     <Button name="Remove" onClick={() => setSelectedImage(null)}></Button>
+                    <ActionButton name="Oppdater profilbilde" onClick={oppdaterProfilbilde}/>
+
                 </div>
             )}
             <br/>
@@ -50,8 +52,6 @@ function ChangeProfilepicture(props) {
                     setSelectedImage(event.target.files[0])
                 }}
             />
-
-            <ActionButton name="Oppdater profilbilde" onClick={oppdaterProfilbilde}/>
         </div>
     )
 }

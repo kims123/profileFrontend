@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {properties} from "../properties";
 import ProfilInfo from "./ProfilInfo";
-import Button from "./Button";
 import '../../css/VisAlleBrukere.css';
+import ActionButton from "./ActionButton";
 
 function VisAlleBrukereListe(props) {
 
@@ -92,7 +92,7 @@ function VisAlleBrukereListe(props) {
             <div className="child-component"
                  hidden={!showProfileInfo}>
                 <ProfilInfo highlightedUser={getHighlightedUser()}/>
-                <Button name="Lukk" onClick={() => setShowProfileInfo(false)}></Button>
+                <ActionButton name="Lukk" onClick={() => setShowProfileInfo(false)}></ActionButton>
             </div>
         </div>
     )

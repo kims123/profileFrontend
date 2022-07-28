@@ -1,0 +1,7 @@
+.profil-child-component {
+    flex: 1;
+}
+
+.profil-parent-component {
+    display: flex;
+}

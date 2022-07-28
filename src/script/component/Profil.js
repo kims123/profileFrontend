@@ -1,8 +1,9 @@
 import React from "react";
-import Button from "./Button";
 import FormEndreBruker from "./FormEndreBruker";
 import {properties} from "../properties";
 import ActionButton from "./ActionButton";
+import '../../css/Profil.css';
+
 
 class Profil extends React.Component {
 
@@ -66,8 +67,8 @@ class Profil extends React.Component {
     render() {
         console.log("Profil render")
         return (
-            <div>
-                <div>
+            <div className="profil-parent-component">
+                <div className="profil-child-component">
                     <h2 id="profil-headline">'s profile</h2>
 
                     <img id="profil-image" alt="not found" width={"250px"}
@@ -79,7 +80,8 @@ class Profil extends React.Component {
                     <ActionButton name="Edit profile" onClick={this.showEditProfile}/>
                 </div>
 
-                <div hidden={!this.state.showOpprettBrukerForm}>
+                <div className="profil-child-component"
+                     hidden={!this.state.showOpprettBrukerForm}>
                     <FormEndreBruker refreshParent={this.fetchUserData}/>
                 </div>
             </div>
