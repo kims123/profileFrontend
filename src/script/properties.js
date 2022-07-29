@@ -1,4 +1,6 @@
 export const properties = {
     hostUrl: "http://localhost:8080",
-    // hostUrl: "https://profile-application-1.herokuapp.com"
+    // hostUrl: "https://profile-application-1.herokuapp.com",
+
+    hostWeatherAppUrl: "http://localhost:8081"
 }

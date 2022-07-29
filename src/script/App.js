@@ -8,7 +8,9 @@ import VisAlleBrukereListe from "./component/VisAlleBrukereListe";
 import Profil from "./component/Profil";
 import {properties} from "./properties";
 import ActionButton from "./component/ActionButton";
-
+import {Dropdown, DropdownButton} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
+import WeatherApplication from "./component/WeatherApplication";
 
 function App() {
 
@@ -60,6 +62,7 @@ function App() {
     const [visAlleBrukere, setVisAlleBrukere] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
     const [showAnnet, setShowAnnet] = useState(false);
+    const [showWeatherApplication, setShowWeatherApplication] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -67,6 +70,7 @@ function App() {
         setShowProfile(false)
         setShowOpprettBrukerForm(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
     }
 
     const visLoggInnForm = () => {
@@ -75,6 +79,7 @@ function App() {
         setShowProfile(false)
         setShowLoggInnForm(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -83,6 +88,7 @@ function App() {
         setShowProfile(false)
         setVisAlleBrukere(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
     }
 
     const loggInn = () => {
@@ -92,6 +98,7 @@ function App() {
         setShowProfile(false)
         setErLoggedIn(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
     }
 
     const loggUt = () => {
@@ -102,6 +109,7 @@ function App() {
         setErLoggedIn(false)
         setShowLoggInnForm(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
         document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
@@ -111,6 +119,7 @@ function App() {
         setVisAlleBrukere(false)
         setShowProfile(true)
         setShowAnnet(false)
+        setShowWeatherApplication(false)
     }
 
     const visAnnet = () => {
@@ -119,6 +128,16 @@ function App() {
         setVisAlleBrukere(false)
         setShowProfile(false)
         setShowAnnet(true)
+        setShowWeatherApplication(false)
+    }
+
+    const visWeatherApplication = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(true)
     }
 
 
@@ -135,13 +154,18 @@ function App() {
                 <div hidden={!erLoggedIn}>
                     <Button name="Profile" onClick={visProfil}/>
                     <Button name="Vis alle brukere" onClick={visAlleBrukereListe}/>
+                    <DropdownButton className="menu-button-inside" id="dropdown-basic-button" title="Applikasjoner"
+                                    style={{display: "inline"}}>
+                        <Dropdown.Item onClick={visWeatherApplication}>Weather application</Dropdown.Item>
+                        <Dropdown.Item onClick={visWeatherApplication}>Another action</Dropdown.Item>
+                        <Dropdown.Item onClick={visWeatherApplication}>Something else</Dropdown.Item>
+                    </DropdownButton>
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
 
-                <div hidden={!erLoggedIn}>
+                <div hidden={!erLoggedIn} style={{"margin-left": "auto"}}>
                     <ActionButton name="Logg ut" onClick={loggUt}/>
                 </div>
-
             </div>
             <div hidden={!showOpprettBrukerForm}>
                 <FormOpprettBruker/>
@@ -162,6 +186,10 @@ function App() {
             <div hidden={!showAnnet}>
                 <h2>Annet</h2>
                 <a href="https://kims123.github.io/ApplikasjonFrontend" target="_blank">FightClub</a>
+            </div>
+
+            <div hidden={!showWeatherApplication}>
+                <WeatherApplication/>
             </div>
 
         </div>
