@@ -1,3 +1,16 @@
+.fantasy-rpg-menu-button-active {
+    border: 2px solid;
+    padding: 15px;
+    background-color: lawngreen;
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
 .fantasy-rpg-menu-button {
     border: 1px solid;
     padding: 15px;

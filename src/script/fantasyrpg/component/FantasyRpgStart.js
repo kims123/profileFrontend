@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import '../../../css/VisAlleBrukere.css';
 import FantasyRpgButton from "./FantasyRpgButton";
+import FantasyRpgNewGame from "./FantasyRpgNewGame";
 
 function FantasyRpgStart() {
 
@@ -23,18 +24,18 @@ function FantasyRpgStart() {
 
     return (
         <div>
-        <div hidden={hideMenu()}>
-            <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
-            <FantasyRpgButton name="Continue" color="green" onClick={startContinueGame}/>
-        </div>
+            <div hidden={hideMenu()}>
+                <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
+                <FantasyRpgButton name="Continue" color="green" onClick={startContinueGame}/>
+            </div>
 
-        <div hidden={!newGame}>
-            New game...
-        </div>
+            <div hidden={!newGame}>
+                <FantasyRpgNewGame/>
+            </div>
 
-        <div hidden={!continueGame}>
-            Continue game...
-        </div>
+            <div hidden={!continueGame}>
+                Continue game...
+            </div>
 
         </div>
     )

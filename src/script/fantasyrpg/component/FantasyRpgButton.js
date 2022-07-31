@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "../../../css/fantasyrpg/fantasyrpg-button.css"
 
 function FantasyRpgButton(props) {
+
+    let activeButt = "fantasy-rpg-menu-button-active"
+    let deactiveButt = "fantasy-rpg-menu-button"
+
+    const [currentStyleClass, setCurrentStyleClass] = useState(deactiveButt)
+
+
+    useEffect(() => {
+        console.log("FantastyRpgButton useEffect()")
+        if(props.active) {
+            setCurrentStyleClass(activeButt)
+        } else {
+            setCurrentStyleClass(deactiveButt)
+        }
+    }, [activeButt, deactiveButt, props.active, props.name])
+
+
     return (
-        <button className="fantasy-rpg-menu-button" onClick={props.onClick}>{props.name}</button>
+        <button className={currentStyleClass} onClick={props.onClick}>{props.name}</button>
     )
 }
 

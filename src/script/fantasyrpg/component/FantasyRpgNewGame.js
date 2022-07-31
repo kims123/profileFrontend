@@ -1,43 +1,73 @@
-import React, {useState} from "react";
-import '../../../css/VisAlleBrukere.css';
+import React from "react";
 import FantasyRpgButton from "./FantasyRpgButton";
 
-function FantasyRpgStart() {
+class FantasyRpgStart extends React.Component {
 
-    const [newGame, setNewGame] = useState(false)
-    const [continueGame, setContinueGame] = useState(false)
-
-    function hideMenu() {
-        return newGame || continueGame
+    state = {
+        warriorChosen: false,
+        mageChosen: false,
+        paladinChosen: false,
+        characterName: ""
     }
 
-    const startNewGame = () => {
-        setNewGame(true)
-        setContinueGame(false)
+    choseWarrior = () => {
+        this.setState({warriorChosen: true})
+        this.setState({mageChosen: false})
+        this.setState({paladinChosen: false})
     }
 
-    const startContinueGame = () => {
-        setNewGame(false)
-        setContinueGame(true)
+    choseMage = () => {
+        this.setState({warriorChosen: false})
+        this.setState({mageChosen: true})
+        this.setState({paladinChosen: false})
     }
 
-    return (
-        <div>
-        <div hidden={hideMenu()}>
-            <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
-            <FantasyRpgButton name="Continue" color="green" onClick={startContinueGame}/>
-        </div>
+    chosePaladin = () => {
+        this.setState({warriorChosen: false})
+        this.setState({mageChosen: false})
+        this.setState({paladinChosen: true})
+    }
 
-        <div hidden={!newGame}>
-            New game...
-        </div>
+    changeName = e => {
+        this.setState({characterName: e})
+    }
 
-        <div hidden={!continueGame}>
-            Continue game...
-        </div>
+    ableToCreateNewCharacter = () => {
+        return (this.state.warriorChosen || this.state.mageChosen || this.state.paladinChosen)
+            && this.state.characterName.length >= 3
+    }
 
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <div>
+                    <h3>Create character</h3>
+                    <FantasyRpgButton name="Warrior" active={this.state.warriorChosen} onClick={this.choseWarrior}/>
+                    <FantasyRpgButton name="Mage" active={this.state.mageChosen} onClick={this.choseMage}/>
+                    <FantasyRpgButton name="Paladin" active={this.state.paladinChosen} onClick={this.chosePaladin}/>
+                </div>
+
+                <div>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        this.handleSubmit()
+                    }}>
+                        <p id="reg-bruker-msg">Infotekst for registrer bruker</p>
+
+                        <label>Name: </label><br/>
+                        <input type="text" value={this.state.characterName} required onChange={(e) => {
+                            this.changeName(e.target.value)
+                        }}/>
+                        <br/>
+
+                        <button disabled={!this.ableToCreateNewCharacter()} type="submit"
+                                className="menu-button">Create
+                        </button>
+                    </form>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default FantasyRpgStart
