@@ -1,16 +1,17 @@
 import '../css/App.css';
-import Button from "./component/Button";
+import Button from "./profile/component/Button";
 import React, {useEffect, useState} from "react";
 import "../css/button.css"
-import FormOpprettBruker from "./component/FormOpprettBruker";
-import FormLoggInn from "./component/FormLoggInn";
-import VisAlleBrukereListe from "./component/VisAlleBrukereListe";
-import Profil from "./component/Profil";
+import FormOpprettBruker from "./profile/component/FormOpprettBruker";
+import FormLoggInn from "./profile/component/FormLoggInn";
+import VisAlleBrukereListe from "./profile/component/VisAlleBrukereListe";
+import Profil from "./profile/component/Profil";
 import {properties} from "./properties";
-import ActionButton from "./component/ActionButton";
+import ActionButton from "./profile/component/ActionButton";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
-import WeatherApplication from "./component/WeatherApplication";
+import WeatherApplication from "./profile/component/WeatherApplication";
+import FantasyRpg from "./fantasyrpg/component/FantasyRpg";
 
 function App() {
 
@@ -63,6 +64,7 @@ function App() {
     const [showProfile, setShowProfile] = useState(false);
     const [showAnnet, setShowAnnet] = useState(false);
     const [showWeatherApplication, setShowWeatherApplication] = useState(false);
+    const [showFantasyRpg, setShowFantasyRpg] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -140,6 +142,16 @@ function App() {
         setShowWeatherApplication(true)
     }
 
+    const visFantasyRpg = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(true)
+    }
+
 
     return (
         <div>
@@ -157,7 +169,7 @@ function App() {
                     <DropdownButton className="menu-button-inside" id="dropdown-basic-button" title="Applikasjoner"
                                     style={{display: "inline"}}>
                         <Dropdown.Item onClick={visWeatherApplication}>Weather application</Dropdown.Item>
-                        <Dropdown.Item onClick={visWeatherApplication}>Another action</Dropdown.Item>
+                        <Dropdown.Item onClick={visFantasyRpg}>Fantasy RPG</Dropdown.Item>
                         <Dropdown.Item onClick={visWeatherApplication}>Something else</Dropdown.Item>
                     </DropdownButton>
                 </div>
@@ -190,6 +202,10 @@ function App() {
 
             <div hidden={!showWeatherApplication}>
                 <WeatherApplication/>
+            </div>
+
+            <div hidden={!showFantasyRpg}>
+                <FantasyRpg/>
             </div>
 
         </div>

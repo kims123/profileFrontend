@@ -1,0 +1,9 @@
+.fantasy-rpg-container {
+    border: 1px solid;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: lightgray;
+    padding-bottom: 200px;
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import FormEndreBruker from "./FormEndreBruker";
-import {properties} from "../properties";
+import {properties} from "../../properties";
 import ActionButton from "./ActionButton";
-import '../../css/Profil.css';
+import '../../../css/Profil.css';
 
 
 class Profil extends React.Component {

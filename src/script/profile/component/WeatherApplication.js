@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {properties} from "../properties";
-import '../../css/VisAlleBrukere.css';
+import {properties} from "../../properties";
+import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";
 
 function VisAlleBrukereListe(props) {
