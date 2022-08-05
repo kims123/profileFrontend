@@ -21,12 +21,12 @@
     color: black;
 }
 
-.menu-button:hover {
+.menu-button:hover:enabled {
     background-color: darkgoldenrod;
     color: white;
 }
 
-.menu-button:active, .action-button:active {
+.menu-button:active:enabled, .action-button:active {
     transition: 0s;
     position: relative;
     top: 3px;

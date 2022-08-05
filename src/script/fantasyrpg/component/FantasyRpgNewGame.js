@@ -37,6 +37,11 @@ class FantasyRpgStart extends React.Component {
             && this.state.characterName.length >= 3
     }
 
+    handleSubmit = () => {
+        console.log("Trykket på create")
+        this.props.showStartMenu(false)
+    }
+
     render() {
         return (
             <div>
