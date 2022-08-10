@@ -9,14 +9,19 @@ function FantasyRpgStart() {
     const [newGame, setNewGame] = useState(false)
     const [continueGame, setContinueGame] = useState(false)
     const [showStartMenu, setShowStartMenu] = useState(true)
+    const [characterName, setCharacterName] = useState("default name")
 
     function hideMenu() {
         return newGame || continueGame
     }
 
     function changeShowStartMenu(e) {
-        console.log("changeShowStartMenu: " + e)
         setShowStartMenu(e)
+    }
+
+    function changeCharacterName(e) {
+        console.log("Endrer charactername: " + e)
+        setCharacterName(e)
     }
 
     const startNewGame = () => {
@@ -38,7 +43,7 @@ function FantasyRpgStart() {
                 </div>
 
                 <div hidden={!newGame}>
-                    <FantasyRpgNewGame showStartMenu={changeShowStartMenu}/>
+                    <FantasyRpgNewGame showStartMenu={changeShowStartMenu} characterName={changeCharacterName}/>
                 </div>
 
                 <div hidden={!continueGame}>
@@ -47,7 +52,7 @@ function FantasyRpgStart() {
             </div>
 
             <div hidden={showStartMenu}>
-                <FantasyRpgGameScreen/>
+                <FantasyRpgGameScreen characterName={characterName}/>
             </div>
 
         </div>

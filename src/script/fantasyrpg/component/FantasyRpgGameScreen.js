@@ -1,4 +1,5 @@
 import React from "react";
+import {properties} from "../properties";
 
 class FantasyRpgGameScreen extends React.Component {
 
@@ -9,11 +10,24 @@ class FantasyRpgGameScreen extends React.Component {
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
-        console.log("componentDidUpdate: " + props.refresh)
-
-        this.setState({name: "Et navn"})
-        this.setState({class: "En class"})
-        this.setState({level: 1})
+        const requestOptions = {
+            method: "POST",
+            headers: {"Content-type": "Application/json"},
+            body: JSON.stringify({
+                characterName: props.characterName,
+                token: localStorage.getItem("userToken")
+            })
+        }
+        fetch(properties.hostUrl + "/getCharacter", requestOptions)
+            .then(response => {
+                return response.json()
+            })
+            .then(character => {
+                this.setState({name: character.characterName})
+                this.setState({class: character.characterClass})
+                this.setState({level: character.level})
+            })
+            .catch(reason => document.getElementById("reg-character-msg").innerHTML = reason)
     }
 
 

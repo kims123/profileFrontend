@@ -8,11 +8,9 @@ class ProfilInfo extends React.Component {
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
-        console.log("componentDidUpdate: " + props.highlightedUser)
         this.setState({highlightedUser: props.highlightedUser})
 
         if (props.highlightedUser.profilePicture != null) {
-            console.log("Fant profilbilde")
             this.setState({imageData: `data:image/png;base64,${props.highlightedUser.profilePicture}`})
         } else {
             this.setState({imageData: "https://4.bp.blogspot.com/_ndu1QvzN_g4/TGyv2ll3qJI/AAAAAAAAAJs/ZWV9JPibojA/s1600/fb-default-pics-2.jpg"})
@@ -21,7 +19,6 @@ class ProfilInfo extends React.Component {
     }
 
     render() {
-        console.log("ProfilInfo render")
         return (
             <div>
                 <div>

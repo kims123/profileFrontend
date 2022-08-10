@@ -25,7 +25,6 @@ function VisAlleBrukereListe(props) {
 
     const fetchUserData = () => {
         let token = localStorage.getItem("userToken")
-        console.log("Henter profilen med token: " + token)
 
         const requestOptions = {
             method: "POST",
@@ -53,14 +52,12 @@ function VisAlleBrukereListe(props) {
     }
 
     function showProfil(user) {
-        console.log("Show profil info for: " + user.username)
         setShowProfileInfo(true)
         setRefreshProfileInfo(!refreshProfileInfo)
         setHighlightedUser(user)
     }
 
     function getHighlightedUser() {
-        console.log("HighlightedUser: " + highlightedUser)
         return highlightedUser
     }
 

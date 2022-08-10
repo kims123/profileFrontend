@@ -1,5 +1,6 @@
 import React from "react";
 import FantasyRpgButton from "./FantasyRpgButton";
+import {properties} from "../properties";
 
 class FantasyRpgStart extends React.Component {
 
@@ -7,25 +8,29 @@ class FantasyRpgStart extends React.Component {
         warriorChosen: false,
         mageChosen: false,
         paladinChosen: false,
-        characterName: ""
+        characterName: "",
+        characterClass: ""
     }
 
     choseWarrior = () => {
         this.setState({warriorChosen: true})
         this.setState({mageChosen: false})
         this.setState({paladinChosen: false})
+        this.setState({characterClass: "warrior"})
     }
 
     choseMage = () => {
         this.setState({warriorChosen: false})
         this.setState({mageChosen: true})
         this.setState({paladinChosen: false})
+        this.setState({characterClass: "mage"})
     }
 
     chosePaladin = () => {
         this.setState({warriorChosen: false})
         this.setState({mageChosen: false})
         this.setState({paladinChosen: true})
+        this.setState({characterClass: "paladin"})
     }
 
     changeName = e => {
@@ -38,8 +43,34 @@ class FantasyRpgStart extends React.Component {
     }
 
     handleSubmit = () => {
-        console.log("Trykket på create")
-        this.props.showStartMenu(false)
+
+    //    Create character. Send til backend.
+
+        const requestOptions = {
+            method: "POST",
+            headers: {"Content-type": "Application/json"},
+            body: JSON.stringify({
+                characterName: this.state.characterName,
+                characterClass: this.state.characterClass,
+                token: localStorage.getItem("userToken")
+            })
+        }
+        fetch(properties.hostUrl + "/createCharacter", requestOptions)
+            .then(async response => {
+                if (!response.ok) {
+                    throw new Error(await response.text())
+                }
+                return response.text()
+            })
+            .then(resp => {
+                this.props.characterName(this.state.characterName)
+            })
+            .then(resp => {
+                this.props.showStartMenu(false)
+            })
+            .catch(error => {
+                document.getElementById("reg-character-msg").innerHTML = error
+            })
     }
 
     render() {
@@ -57,7 +88,7 @@ class FantasyRpgStart extends React.Component {
                         e.preventDefault();
                         this.handleSubmit()
                     }}>
-                        <p id="reg-bruker-msg">Infotekst for registrer bruker</p>
+                        <p id="reg-character-msg">Infotekst for å opprette character</p>
 
                         <label>Name: </label><br/>
                         <input type="text" value={this.state.characterName} required onChange={(e) => {

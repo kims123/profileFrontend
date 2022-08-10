@@ -56,7 +56,7 @@ class FormLoggInn extends React.Component {
                     this.changePassword(e.target.value)
                 }}/><br/>
 
-                <ActionButton name="Logg inn" onClick="submit"/>
+                <ActionButton name="Logg inn" onClick={() => "submit"}/>
 
             </form>
         </div>

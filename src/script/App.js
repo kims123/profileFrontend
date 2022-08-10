@@ -175,7 +175,7 @@ function App() {
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
 
-                <div hidden={!erLoggedIn} style={{"margin-left": "auto"}}>
+                <div hidden={!erLoggedIn} style={{"marginLeft": "auto"}}>
                     <ActionButton name="Logg ut" onClick={loggUt}/>
                 </div>
             </div>

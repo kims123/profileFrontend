@@ -117,7 +117,7 @@ class Form extends React.Component {
                 }}/>
                 <br/>
 
-                <ActionButton name="Endre" onClick="submit" />
+                <ActionButton name="Endre" onClick={() => "submit"} />
             </form>
         </div>
     }

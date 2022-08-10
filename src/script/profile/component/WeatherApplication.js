@@ -10,7 +10,6 @@ function VisAlleBrukereListe(props) {
 
     const fetchWeatherData = () => {
         let token = localStorage.getItem("userToken")
-        console.log("Henter weatherdata med token: " + token)
 
         const requestOptions = {
             method: "POST",
@@ -21,15 +20,12 @@ function VisAlleBrukereListe(props) {
         fetch(properties.hostWeatherAppUrl + "/getWeatherFor?area=" + searchArea, requestOptions)
             .then(response => {
                 if (!response.ok) {
-                    console.log("Weather app. Noe gikk galt")
                     throw response
                 }
-                console.log(response)
                 return response;
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data.intervals)
                 setWeatherResult(data.intervals)
             })
             .catch(error => {
@@ -56,7 +52,7 @@ function VisAlleBrukereListe(props) {
                 }}/><br/>
 
 
-                <ActionButton name="Søk" onClick="submit"/>
+                <ActionButton name="Søk" onClick={() => "submit"}/>
 
             </form>
             <div>

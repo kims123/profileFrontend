@@ -15,7 +15,6 @@ class Profil extends React.Component {
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
-        console.log("componentDidUpdate: " + props.refresh)
         if (props.refresh && this.state.updateComponent) {
             this.fetchUserData()
             this.setState({updateComponent: false})
@@ -27,8 +26,6 @@ class Profil extends React.Component {
     }
 
     fetchUserData = () => {
-        console.log("Henter profilen")
-
         const requestOptions = {
             method: "POST",
             headers: {"Content-type": "Application/json"},
@@ -52,7 +49,6 @@ class Profil extends React.Component {
             })
             .then(user => {
                 if (user.profilePicture != null) {
-                    console.log("Fant profilbilde")
                     this.setState({imageData: `data:image/png;base64,${user.profilePicture}`})
                 } else {
                     this.setState({imageData: "https://4.bp.blogspot.com/_ndu1QvzN_g4/TGyv2ll3qJI/AAAAAAAAAJs/ZWV9JPibojA/s1600/fb-default-pics-2.jpg"})
@@ -65,7 +61,6 @@ class Profil extends React.Component {
     }
 
     render() {
-        console.log("Profil render")
         return (
             <div className="profil-parent-component">
                 <div className="profil-child-component">

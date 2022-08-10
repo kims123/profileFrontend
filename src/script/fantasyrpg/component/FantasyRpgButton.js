@@ -10,7 +10,6 @@ function FantasyRpgButton(props) {
 
 
     useEffect(() => {
-        console.log("FantastyRpgButton useEffect()")
         if(props.active) {
             setCurrentStyleClass(activeButt)
         } else {
