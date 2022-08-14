@@ -73,6 +73,7 @@ function App() {
         setShowOpprettBrukerForm(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const visLoggInnForm = () => {
@@ -82,6 +83,7 @@ function App() {
         setShowLoggInnForm(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -91,6 +93,7 @@ function App() {
         setVisAlleBrukere(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const loggInn = () => {
@@ -101,6 +104,7 @@ function App() {
         setErLoggedIn(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const loggUt = () => {
@@ -112,6 +116,7 @@ function App() {
         setShowLoggInnForm(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
         document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
@@ -122,6 +127,7 @@ function App() {
         setShowProfile(true)
         setShowAnnet(false)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const visAnnet = () => {
@@ -131,6 +137,7 @@ function App() {
         setShowProfile(false)
         setShowAnnet(true)
         setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
     }
 
     const visWeatherApplication = () => {
@@ -140,6 +147,7 @@ function App() {
         setShowProfile(false)
         setShowAnnet(false)
         setShowWeatherApplication(true)
+        setShowFantasyRpg(false)
     }
 
     const visFantasyRpg = () => {

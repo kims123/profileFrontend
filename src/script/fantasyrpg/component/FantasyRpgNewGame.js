@@ -69,7 +69,11 @@ class FantasyRpgStart extends React.Component {
                 this.props.showStartMenu(false)
             })
             .catch(error => {
-                document.getElementById("reg-character-msg").innerHTML = error
+                if(error.message === 'Failed to fetch') {
+                    document.getElementById("reg-character-msg").innerHTML = "Feil ved kontakt mot backend. Mest sannsynlig er service ikke på."
+                } else {
+                    document.getElementById("reg-character-msg").innerHTML = error
+                }
             })
     }
 

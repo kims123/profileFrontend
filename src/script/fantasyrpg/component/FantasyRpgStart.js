@@ -3,6 +3,7 @@ import '../../../css/VisAlleBrukere.css';
 import FantasyRpgButton from "./FantasyRpgButton";
 import FantasyRpgNewGame from "./FantasyRpgNewGame";
 import FantasyRpgGameScreen from "./FantasyRpgGameScreen";
+import FantasyRpgListAllCharacters from "./FantasyRpgListAllCharacters";
 
 function FantasyRpgStart() {
 
@@ -10,6 +11,7 @@ function FantasyRpgStart() {
     const [continueGame, setContinueGame] = useState(false)
     const [showStartMenu, setShowStartMenu] = useState(true)
     const [characterName, setCharacterName] = useState("default name")
+    const [showAllCharacters, setShowAllCharacters] = useState(true);
 
     function hideMenu() {
         return newGame || continueGame
@@ -27,11 +29,20 @@ function FantasyRpgStart() {
     const startNewGame = () => {
         setNewGame(true)
         setContinueGame(false)
+        setShowAllCharacters(false)
     }
 
     const startContinueGame = () => {
         setNewGame(false)
         setContinueGame(true)
+        setShowAllCharacters(false)
+    }
+
+    const backToStart = () => {
+        setShowStartMenu(true)
+        setNewGame(false)
+        setContinueGame(false)
+        setShowAllCharacters(true)
     }
 
     return (
@@ -39,7 +50,9 @@ function FantasyRpgStart() {
             <div hidden={!showStartMenu}>
                 <div hidden={hideMenu()}>
                     <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
-                    <FantasyRpgButton name="Continue" color="green" onClick={startContinueGame}/>
+                    <FantasyRpgButton name="Continue last save" color="green" onClick={startContinueGame}/>
+
+                    <FantasyRpgListAllCharacters refresh={showAllCharacters}/>
                 </div>
 
                 <div hidden={!newGame}>
@@ -52,7 +65,7 @@ function FantasyRpgStart() {
             </div>
 
             <div hidden={showStartMenu}>
-                <FantasyRpgGameScreen characterName={characterName}/>
+                <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart}/>
             </div>
 
         </div>
