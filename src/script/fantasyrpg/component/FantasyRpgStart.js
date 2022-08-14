@@ -65,7 +65,7 @@ function FantasyRpgStart() {
             </div>
 
             <div hidden={showStartMenu}>
-                <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart}/>
+                <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart} refresh={!showStartMenu}/>
             </div>
 
         </div>

@@ -11,11 +11,17 @@ class FantasyRpgGameScreen extends React.Component {
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
+        if (props.refresh === true) {
+            this.fetchCharacterData(props.characterName)
+        }
+    }
+
+    fetchCharacterData(characterName) {
         const requestOptions = {
             method: "POST",
             headers: {"Content-type": "Application/json"},
             body: JSON.stringify({
-                characterName: props.characterName,
+                characterName: characterName,
                 token: localStorage.getItem("userToken")
             })
         }
