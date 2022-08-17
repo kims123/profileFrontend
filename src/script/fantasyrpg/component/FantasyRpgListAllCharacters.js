@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {properties} from "../properties";
+import "../../../css/fantasyrpg/fantasyrpg-list-all-characters.css"
 
 function FantasyRpgStart(props) {
 
@@ -28,18 +29,15 @@ function FantasyRpgStart(props) {
             })
             .then(characters => {
                 setAllCharacters(characters)
-                document.getElementById("all-character-msg").innerHTML = "Hentet alle characters"
             })
             .catch(reason => {
                 document.getElementById("all-character-msg").innerHTML = reason
             })
     }
 
-    // function showProfil(user) {
-    //     setShowProfileInfo(true)
-    //     setRefreshProfileInfo(!refreshProfileInfo)
-    //     setHighlightedUser(user)
-    // }
+    function playCharacter(character) {
+        props.continueGame(character)
+    }
 
 
     return (
@@ -60,8 +58,7 @@ function FantasyRpgStart(props) {
                         <tbody>
                         {allCharacters.map((character) => (
                             <tr key={character.characterName}>
-                                {/*<td className="td-link" onClick={() => showProfil(character)}>{character.characterName}</td>*/}
-                                <td>{character.characterName}</td>
+                                <td className="td-link" onClick={() => playCharacter(character.characterName)}>{character.characterName.toString()}</td>
                                 <td>{character.characterClass}</td>
                                 <td>{character.level}</td>
                             </tr>

@@ -12,6 +12,10 @@ class FantasyRpgStart extends React.Component {
         characterClass: ""
     }
 
+    componentDidMount() {
+        this.initialState = this.state
+    }
+
     choseWarrior = () => {
         this.setState({warriorChosen: true})
         this.setState({mageChosen: false})
@@ -64,6 +68,7 @@ class FantasyRpgStart extends React.Component {
             })
             .then(resp => {
                 this.props.characterName(this.state.characterName)
+                this.setState(this.initialState)
             })
             .then(resp => {
                 this.props.showStartMenu(false)

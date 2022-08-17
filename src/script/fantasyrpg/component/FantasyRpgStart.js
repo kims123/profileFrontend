@@ -22,7 +22,6 @@ function FantasyRpgStart() {
     }
 
     function changeCharacterName(e) {
-        console.log("Endrer charactername: " + e)
         setCharacterName(e)
     }
 
@@ -45,6 +44,12 @@ function FantasyRpgStart() {
         setShowAllCharacters(true)
     }
 
+    const showContinueGame = (character) => {
+        setCharacterName(character)
+        setShowStartMenu(false)
+        setContinueGame(true)
+    }
+
     return (
         <div>
             <div hidden={!showStartMenu}>
@@ -52,7 +57,7 @@ function FantasyRpgStart() {
                     <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
                     <FantasyRpgButton name="Continue last save" color="green" onClick={startContinueGame}/>
 
-                    <FantasyRpgListAllCharacters refresh={showAllCharacters}/>
+                    <FantasyRpgListAllCharacters refresh={showAllCharacters} continueGame={showContinueGame}/>
                 </div>
 
                 <div hidden={!newGame}>
@@ -60,7 +65,7 @@ function FantasyRpgStart() {
                 </div>
 
                 <div hidden={!continueGame}>
-                    Continue game...
+                    <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart} refresh={!showStartMenu}/>
                 </div>
             </div>
 
