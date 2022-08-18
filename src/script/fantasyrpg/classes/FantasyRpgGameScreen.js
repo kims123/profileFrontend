@@ -44,9 +44,10 @@ class FantasyRpgGameScreen extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <h2>Game screen</h2>
-                    <td className="fantasy-rpg-table">
+                <h2>Game screen</h2>
+                <div className="fantasy-rpg-game-screen">
+                    <div>
+                    <td className="fantasy-rpg-table-stats">
                         <ul>
                             <p>Stats </p>
                             <hr />
@@ -56,6 +57,10 @@ class FantasyRpgGameScreen extends React.Component {
                             <li>Experience: {this.state.experience}</li>
                         </ul>
                     </td>
+                    </div>
+                    <div className="fantasy-rpg-game-box">
+                        <h3>Game box</h3>
+                    </div>
                 </div>
                 <div>
                     <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>

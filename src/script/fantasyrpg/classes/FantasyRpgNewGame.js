@@ -110,6 +110,9 @@ class FantasyRpgStart extends React.Component {
                         </button>
                     </form>
                 </div>
+                <div>
+                    <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>
+                </div>
             </div>
         )
     }
