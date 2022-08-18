@@ -1,7 +1,7 @@
 import React from "react";
 import FormEndreBruker from "./FormEndreBruker";
-import {properties} from "../../properties";
-import ActionButton from "./ActionButton";
+import {properties} from "../resources/properties";
+import ActionButton from "../component/ActionButton";
 import '../../../css/Profil.css';
 
 

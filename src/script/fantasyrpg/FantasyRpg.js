@@ -1,7 +1,7 @@
 import React from "react";
-import '../../../css/VisAlleBrukere.css';
-import FantasyRpgStart from "./FantasyRpgStart";
-import "../../../css/fantasyrpg/fantasyrpg-main.css"
+import '../../css/VisAlleBrukere.css';
+import FantasyRpgStart from "./component/FantasyRpgStart";
+import "../../css/fantasyrpg/fantasyrpg-main.css"
 
 function FantasyRpg() {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
-import ChangeProfilepicture from "./ChangeProfilepicture";
-import {properties} from "../../properties";
-import ActionButton from "./ActionButton";
+import ChangeProfilepicture from "../component/ChangeProfilepicture";
+import {properties} from "../resources/properties";
+import ActionButton from "../component/ActionButton";
 
 class Form extends React.Component {
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {properties} from "../properties";
+import {properties} from "../resources/properties";
 import "../../../css/fantasyrpg/fantasyrpg-list-all-characters.css"
 
 function FantasyRpgStart(props) {

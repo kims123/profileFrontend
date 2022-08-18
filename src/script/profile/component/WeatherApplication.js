@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {properties} from "../../properties";
+import {properties} from "../resources/properties";
 import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";
 

@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import '../../../css/VisAlleBrukere.css';
 import FantasyRpgButton from "./FantasyRpgButton";
-import FantasyRpgNewGame from "./FantasyRpgNewGame";
-import FantasyRpgGameScreen from "./FantasyRpgGameScreen";
+import FantasyRpgNewGame from "../classes/FantasyRpgNewGame";
+import FantasyRpgGameScreen from "../classes/FantasyRpgGameScreen";
 import FantasyRpgListAllCharacters from "./FantasyRpgListAllCharacters";
 
 function FantasyRpgStart() {

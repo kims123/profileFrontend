@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {properties} from "../../properties";
-import ProfilInfo from "./ProfilInfo";
+import {properties} from "../resources/properties";
+import ProfilInfo from "../classes/ProfilInfo";
 import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";
 

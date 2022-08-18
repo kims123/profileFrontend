@@ -2,16 +2,16 @@ import '../css/App.css';
 import Button from "./profile/component/Button";
 import React, {useEffect, useState} from "react";
 import "../css/button.css"
-import FormOpprettBruker from "./profile/component/FormOpprettBruker";
-import FormLoggInn from "./profile/component/FormLoggInn";
+import FormOpprettBruker from "./profile/classes/FormOpprettBruker";
+import FormLoggInn from "./profile/classes/FormLoggInn";
 import VisAlleBrukereListe from "./profile/component/VisAlleBrukereListe";
-import Profil from "./profile/component/Profil";
-import {properties} from "./properties";
+import Profil from "./profile/classes/Profil";
+import {properties} from "./profile/resources/properties";
 import ActionButton from "./profile/component/ActionButton";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
-import FantasyRpg from "./fantasyrpg/component/FantasyRpg";
+import FantasyRpg from "./fantasyrpg/FantasyRpg";
 import ActionButtonRed from "./profile/component/ActionButtonRed";
 
 function App() {
