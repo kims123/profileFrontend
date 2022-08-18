@@ -1,9 +1,6 @@
 import React from "react";
 import {properties} from "../resources/properties";
-import FantasyRpgButton from "../component/FantasyRpgButton";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
-import FantasyRpgGameBox from "./FantasyRpgGameBox";
-import FantasyRpgGameStats from "./FantasyRpgGameStats";
 
 class FantasyRpgGameScreen extends React.Component {
 
@@ -46,14 +43,16 @@ class FantasyRpgGameScreen extends React.Component {
     render() {
         return (
             <div>
-                <h2>Game screen</h2>
-                <div className="fantasy-rpg-game-screen">
-                    <FantasyRpgGameStats/>
-                    <FantasyRpgGameBox/>
-                </div>
-                <div>
-                    <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>
-                </div>
+                <td className="fantasy-rpg-table-stats">
+                    <ul>
+                        <p>Stats </p>
+                        <hr/>
+                        <li>Name: {this.state.name}</li>
+                        <li>Class: {this.state.class}</li>
+                        <li>Level: {this.state.level}</li>
+                        <li>Experience: {this.state.experience}</li>
+                    </ul>
+                </td>
             </div>
         )
     }

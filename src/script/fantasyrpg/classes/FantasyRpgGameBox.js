@@ -2,10 +2,8 @@ import React from "react";
 import {properties} from "../resources/properties";
 import FantasyRpgButton from "../component/FantasyRpgButton";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
-import FantasyRpgGameBox from "./FantasyRpgGameBox";
-import FantasyRpgGameStats from "./FantasyRpgGameStats";
 
-class FantasyRpgGameScreen extends React.Component {
+class FantasyRpgGameBox extends React.Component {
 
     state = {
         name: "",
@@ -45,18 +43,11 @@ class FantasyRpgGameScreen extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Game screen</h2>
-                <div className="fantasy-rpg-game-screen">
-                    <FantasyRpgGameStats/>
-                    <FantasyRpgGameBox/>
-                </div>
-                <div>
-                    <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>
-                </div>
+            <div className="fantasy-rpg-game-box">
+                <h3>Game box</h3>
             </div>
         )
     }
 }
 
-export default FantasyRpgGameScreen
+export default FantasyRpgGameBox
