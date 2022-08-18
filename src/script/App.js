@@ -12,6 +12,7 @@ import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
 import FantasyRpg from "./fantasyrpg/component/FantasyRpg";
+import ActionButtonRed from "./profile/component/ActionButtonRed";
 
 function App() {
 
@@ -184,7 +185,7 @@ function App() {
                 <Button name="Annet" onClick={visAnnet}/>
 
                 <div hidden={!erLoggedIn} style={{"marginLeft": "auto"}}>
-                    <ActionButton name="Logg ut" onClick={loggUt}/>
+                    <ActionButtonRed name="Logg ut" onClick={loggUt}/>
                 </div>
             </div>
             <div hidden={!showOpprettBrukerForm}>
