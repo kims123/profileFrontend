@@ -1,6 +1,5 @@
 import React from "react";
 import {properties} from "../resources/properties";
-import FantasyRpgButton from "../component/FantasyRpgButton";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
 
 class FantasyRpgGameBox extends React.Component {

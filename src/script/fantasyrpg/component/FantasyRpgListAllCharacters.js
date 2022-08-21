@@ -7,7 +7,6 @@ function FantasyRpgStart(props) {
     const [allCharacters, setAllCharacters] = useState([])
 
     useEffect(() => {
-        console.log(props.seed)
         if (props.refresh) {
             fetchUserData()
         }
@@ -29,6 +28,11 @@ function FantasyRpgStart(props) {
             })
             .then(characters => {
                 setAllCharacters(characters)
+                if(characters.length === 0) {
+                    document.getElementById("all-character-msg").innerHTML = "You dont have any characters"
+                } else {
+                    document.getElementById("all-character-msg").innerHTML = ""
+                }
             })
             .catch(reason => {
                 document.getElementById("all-character-msg").innerHTML = reason
@@ -43,7 +47,7 @@ function FantasyRpgStart(props) {
     return (
         <div className="parent-component-fantasyrpg-allcharacters">
             <div className="child-component-fantasyrpg-allcharacters">
-                <h2>Characters list</h2>
+                <h2>Your characters</h2>
                 <p id="all-character-msg"></p>
 
                 <div>
@@ -57,8 +61,8 @@ function FantasyRpgStart(props) {
                         </thead>
                         <tbody>
                         {allCharacters.map((character) => (
-                            <tr key={character.characterName}>
-                                <td className="td-link" onClick={() => playCharacter(character.characterName)}>{character.characterName.toString()}</td>
+                            <tr key={character.characterName} className="td-link" onClick={() => playCharacter(character.characterName)}>
+                                <td>{character.characterName.toString()}</td>
                                 <td>{character.characterClass}</td>
                                 <td>{character.level}</td>
                             </tr>
@@ -67,11 +71,6 @@ function FantasyRpgStart(props) {
                     </table>
                 </div>
             </div>
-            {/*<div className="child-component"*/}
-            {/*     hidden={!showProfileInfo}>*/}
-            {/*    <ProfilInfo highlightedUser={getHighlightedUser()}/>*/}
-            {/*    <ActionButton name="Lukk" onClick={() => setShowProfileInfo(false)}></ActionButton>*/}
-            {/*</div>*/}
         </div>
     )
 }

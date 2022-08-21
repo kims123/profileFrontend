@@ -1,6 +1,7 @@
 import React from "react";
 import FantasyRpgButton from "../component/FantasyRpgButton";
 import {properties} from "../resources/properties";
+import '../../../css/fantasyrpg/fantasyrpg-new.game.css'
 
 class FantasyRpgStart extends React.Component {
 
@@ -84,7 +85,7 @@ class FantasyRpgStart extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="fantasy-rpg-new-game-menu">
                 <div>
                     <h3>Create character</h3>
                     <FantasyRpgButton name="Warrior" active={this.state.warriorChosen} onClick={this.choseWarrior}/>
@@ -109,9 +110,6 @@ class FantasyRpgStart extends React.Component {
                                 className="menu-button">Create
                         </button>
                     </form>
-                </div>
-                <div>
-                    <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>
                 </div>
             </div>
         )

@@ -42,17 +42,17 @@ class FantasyRpgGameScreen extends React.Component {
             .catch(reason => document.getElementById("reg-character-msg").innerHTML = reason)
     }
 
-
     render() {
         return (
-            <div>
+            <div className="fantasy-rpg-game-screen-container">
                 <h2>Game screen</h2>
                 <div className="fantasy-rpg-game-screen">
-                    <FantasyRpgGameStats/>
+                    <FantasyRpgGameStats
+                        characterName={this.state.name}
+                        characterClass={this.state.class}
+                        characterLevel={this.state.level}
+                        characterExperience={this.state.experience}/>
                     <FantasyRpgGameBox/>
-                </div>
-                <div>
-                    <FantasyRpgButton name="Back to start" color="green" onClick={this.props.backToStart}/>
                 </div>
             </div>
         )

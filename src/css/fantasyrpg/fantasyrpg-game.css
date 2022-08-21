@@ -2,6 +2,7 @@
     text-align: left;
     border: 3px solid black;
     background-color: darkseagreen;
+    white-space: nowrap;
 }
 
 ul {
@@ -15,8 +16,13 @@ ul {
 }
 
 .fantasy-rpg-game-screen {
+    height: 90%;
     border: 3px solid black;
     background-color: yellow;
     display: inline-flex;
     width: -webkit-fill-available;
+}
+
+.fantasy-rpg-game-screen-container {
+    height: 565px;
 }

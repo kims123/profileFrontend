@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import '../../../css/VisAlleBrukere.css';
 import FantasyRpgButton from "./FantasyRpgButton";
 import FantasyRpgNewGame from "../classes/FantasyRpgNewGame";
 import FantasyRpgGameScreen from "../classes/FantasyRpgGameScreen";
 import FantasyRpgListAllCharacters from "./FantasyRpgListAllCharacters";
+import '../../../css/VisAlleBrukere.css';
+import '../../../css/fantasyrpg/fantasyrpg-start.css'
 
 function FantasyRpgStart() {
 
@@ -53,7 +54,7 @@ function FantasyRpgStart() {
     return (
         <div>
             <div hidden={!showStartMenu}>
-                <div hidden={hideMenu()}>
+                <div hidden={hideMenu()} className="fantasy-rpg-start-menu">
                     <FantasyRpgButton name="New game" color="green" onClick={startNewGame}/>
                     <FantasyRpgButton name="Continue last save" color="green" onClick={startContinueGame}/>
 
@@ -73,6 +74,10 @@ function FantasyRpgStart() {
                 <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart} refresh={!showStartMenu}/>
             </div>
 
+
+            <div>
+                <FantasyRpgButton name="Back to start" color="green" onClick={backToStart}/>
+            </div>
         </div>
     )
 }

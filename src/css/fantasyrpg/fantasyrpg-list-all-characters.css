@@ -1,3 +1,22 @@
 .child-component-fantasyrpg-allcharacters {
     text-align: left;
 }
+
+table {
+    width: 50%;
+    border: 2px solid black;
+    background-color: gold;
+}
+
+tbody {
+
+    background-color: lightsalmon;
+}
+
+tr:nth-child(even) {
+    background-color: lightcyan;
+}
+
+thead {
+    font-size: 20px;
+}
