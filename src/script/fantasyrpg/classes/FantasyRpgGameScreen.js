@@ -1,9 +1,8 @@
 import React from "react";
 import {properties} from "../resources/properties";
-import FantasyRpgButton from "../component/FantasyRpgButton";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
-import FantasyRpgGameBox from "./FantasyRpgGameBox";
-import FantasyRpgGameStats from "./FantasyRpgGameStats";
+import FantasyRpgGameBoxFull from "./FantasyRpgGameBoxFull";
+import FantasyRpgGameStatsLeft from "./FantasyRpgGameStatsLeft";
 
 class FantasyRpgGameScreen extends React.Component {
 
@@ -45,14 +44,14 @@ class FantasyRpgGameScreen extends React.Component {
     render() {
         return (
             <div className="fantasy-rpg-game-screen-container">
-                <h2>Game screen</h2>
+                {/*<h2>Game screen</h2>*/}
                 <div className="fantasy-rpg-game-screen">
-                    <FantasyRpgGameStats
+                    <FantasyRpgGameStatsLeft
                         characterName={this.state.name}
                         characterClass={this.state.class}
                         characterLevel={this.state.level}
                         characterExperience={this.state.experience}/>
-                    <FantasyRpgGameBox/>
+                    <FantasyRpgGameBoxFull/>
                 </div>
             </div>
         )

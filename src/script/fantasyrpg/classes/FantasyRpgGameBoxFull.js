@@ -1,8 +1,10 @@
 import React from "react";
 import {properties} from "../resources/properties";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
+import FantasyRpgGameStatsTop from "./FantasyRpgGameStatsTop";
+import FantasyRpgGameBoxCenter from "./FantasyRpgGameBoxCenter";
 
-class FantasyRpgGameBox extends React.Component {
+class FantasyRpgGameBoxFull extends React.Component {
 
     state = {
         name: "",
@@ -43,10 +45,14 @@ class FantasyRpgGameBox extends React.Component {
     render() {
         return (
             <div className="fantasy-rpg-game-box">
-                <h3>Game box</h3>
+                <FantasyRpgGameStatsTop/>
+                <hr/>
+
+                <FantasyRpgGameBoxCenter />
+
             </div>
         )
     }
 }
 
-export default FantasyRpgGameBox
+export default FantasyRpgGameBoxFull
