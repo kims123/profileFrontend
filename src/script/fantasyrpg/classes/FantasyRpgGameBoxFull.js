@@ -22,13 +22,13 @@ class FantasyRpgGameBoxFull extends React.Component {
         this.setState({currentMonster: monster})
     }
 
-    UNSAFE_componentWillReceiveProps = (props) => {
-        console.log("Refresher FantasyRpgGameBoxFull")
-        this.setMonster(this.fetchNextMonster)
+    UNSAFE_componentWillReceiveProps = () => {
+        this.setMonster(this.fetchNextMonster())
     }
 
     fetchNextMonster = () => {
         let number = Math.floor(Math.random() * 4) + 1;
+
         switch (number) {
             case 1:
                 return this.monster1()
@@ -101,7 +101,7 @@ class FantasyRpgGameBoxFull extends React.Component {
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
-                    <FantasyRpgGameInfo/>
+                    <FantasyRpgGameInfo nextMonster={this.state.currentMonster}/>
                 </div>
                 <hr style={{margin: 0, marginTop: "10px"}}/>
                 <FantasyRpgPlayerArea/>

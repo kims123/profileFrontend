@@ -1,6 +1,15 @@
 .fantasy-rpg-monster {
     border: 4px solid black;
     margin-left: 10px;
+    background-color: navajowhite;
+}
+
+.fantasy-rpg-monster-name {
+    border: 4px solid black;
+    border-bottom: 0;
+    margin-left: 10px;
+    background-color: orangered;
+    text-align: center;
 }
 
 .fantasy-rpg-monster-status {
