@@ -103,7 +103,7 @@ class FantasyRpgGameBoxFull extends React.Component {
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
                     <FantasyRpgGameInfo nextMonster={this.state.currentMonster}/>
                 </div>
-                <hr style={{margin: 0, marginTop: "10px"}}/>
+                <hr style={{margin: 0}}/>
                 <FantasyRpgPlayerArea/>
             </div>
         )

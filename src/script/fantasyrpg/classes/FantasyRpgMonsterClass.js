@@ -26,7 +26,9 @@ class FantasyRpgMonsterClass extends React.Component {
                     <img src={this.state.image} style={{width: "150px", height: "145px", padding: "5px"}} alt={imgDefault}/>
                 </div>
                 <div className="fantasy-rpg-monster-status">
-                    HP: {this.state.health}/{this.state.health}. Dmg: {this.state.damageFrom} - {this.state.damageTo}
+                    <strong>HP:</strong> {this.state.health}/{this.state.health}. <br/>
+                    <hr style={{margin: "0"}} />
+                    <strong>Dmg:</strong> {this.state.damageFrom} - {this.state.damageTo}
                 </div>
             </div>
         )

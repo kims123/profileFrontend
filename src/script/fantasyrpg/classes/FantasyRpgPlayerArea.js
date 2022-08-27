@@ -9,9 +9,9 @@ class FantasyRpgPlayerArea extends React.Component {
             <div style={{display: "flex"}}>
                 <div className="fantasy-rpg-player-buttons">
                     <div>
-                        <Button name="Choise 1"/>
-                        <Button name="Choise 2"/>
-                        <Button name="Choise 3"/>
+                        <Button name="Attack"/>
+                        <Button name="Skill 1"/>
+                        <Button name="Skill 2"/>
                     </div>
                     <div>
                         <Button name="Flee"/>
