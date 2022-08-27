@@ -96,13 +96,24 @@ class FantasyRpgGameBoxFull extends React.Component {
     render() {
         return (
             <div className="fantasy-rpg-game-box">
-                <FantasyRpgGameStatsTop/>
+                <FantasyRpgGameStatsTop characterHealth={this.props.characterHealth}/>
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
                     <FantasyRpgGameInfo nextMonster={this.state.currentMonster}/>
                 </div>
-                <FantasyRpgPlayerArea/>
+
+                <FantasyRpgPlayerArea
+                    characterWeaponName={this.props.characterWeaponName}
+                    characterWeaponDamageFrom={this.props.characterWeaponDamageFrom}
+                    characterWeaponDamageTo={this.props.characterWeaponDamageTo}
+                    characterHealth={this.props.characterHealth}
+                    characterHeadName={this.props.characterHeadName}
+                    characterHeadDefence={this.props.characterHeadDefence}
+                    characterShouldersName={this.props.characterShouldersName}
+                    characterShouldersDefence={this.props.characterShouldersDefence}
+                    characterChestName={this.props.characterChestName}
+                    characterChestDefence={this.props.characterChestDefence}/>
             </div>
         )
     }

@@ -22,9 +22,7 @@ class FantasyRpgGameInfo extends React.Component {
     render() {
         return (
             <div className="fantasy-rpg-info">
-                <p>{this.state.name} is attacking you for {this.state.lastAttack} damage.</p>
-                <p>Debug: {this.state.damageFrom} - {this.state.damageTo}</p>
-
+                <p>-> {this.state.name} is attacking you for {this.state.lastAttack} damage.</p>
             </div>
         )
     }

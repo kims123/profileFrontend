@@ -7,16 +7,24 @@ import FantasyRpgGameStatsLeft from "./FantasyRpgGameStatsLeft";
 import imgWarrior from "../../../image/warrior.png";
 import imgMage from "../../../image/mage.png";
 import imgPaladin from "../../../image/paladin.png";
-import imgDefault from "../../../image/no-go-clipart-11.jpg";
 
 class FantasyRpgGameScreen extends React.Component {
 
     state = {
         name: "",
         class: "",
-        level: 0,
-        experience: 0,
-        image: imgDefault
+        level: 990,
+        experience: 990,
+        characterWeaponName: "",
+        characterWeaponDamageFrom: 990,
+        characterWeaponDamageTo: 990,
+        characterHealth: 990,
+        characterHeadName: "",
+        characterHeadDefence: 990,
+        characterShouldersName: "",
+        characterShouldersDefence: 990,
+        characterChestName: "",
+        characterChestDefence: 990,
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
@@ -43,6 +51,16 @@ class FantasyRpgGameScreen extends React.Component {
                 this.setState({class: character.characterClass})
                 this.setState({level: character.level})
                 this.setState({experience: character.experience})
+                this.setState({characterWeaponName: character.characterWeaponName})
+                this.setState({characterWeaponDamageFrom: character.characterWeaponDamageFrom})
+                this.setState({characterWeaponDamageTo: character.characterWeaponDamageTo})
+                this.setState({characterHealth: character.characterHealth})
+                this.setState({characterHeadName: character.characterHeadName})
+                this.setState({characterHeadDefence: character.characterHeadDefence})
+                this.setState({characterShouldersName: character.characterShouldersName})
+                this.setState({characterShouldersDefence: character.characterShouldersDefence})
+                this.setState({characterChestName: character.characterChestName})
+                this.setState({characterChestDefence: character.characterChestDefence})
 
                 if (character.characterClass === "Warrior") {
                     this.setState({image: imgWarrior})
@@ -65,7 +83,18 @@ class FantasyRpgGameScreen extends React.Component {
                         characterLevel={this.state.level}
                         characterExperience={this.state.experience}
                         characterImage={this.state.image}/>
-                    <FantasyRpgGameBoxFull/>
+                    <FantasyRpgGameBoxFull
+                        characterWeaponName={this.state.characterWeaponName.toString()}
+                        characterWeaponDamageFrom={this.state.characterWeaponDamageFrom}
+                        characterWeaponDamageTo={this.state.characterWeaponDamageTo}
+                        characterHealth={this.state.characterHealth}
+                        characterHeadName={this.state.characterHeadName}
+                        characterHeadDefence={this.state.characterHeadDefence}
+                        characterShouldersName={this.state.characterShouldersName}
+                        characterShouldersDefence={this.state.characterShouldersDefence}
+                        characterChestName={this.state.characterChestName}
+                        characterChestDefence={this.state.characterChestDefence}
+                        characterImage={this.state.image}/>
                 </div>
             </div>
         )

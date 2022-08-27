@@ -56,18 +56,69 @@ class FantasyRpgStart extends React.Component {
     }
 
     handleSubmit = () => {
-
-        //    Create character. Send til backend.
-
-        const requestOptions = {
-            method: "POST",
-            headers: {"Content-type": "Application/json"},
-            body: JSON.stringify({
-                characterName: this.state.characterName,
-                characterClass: this.state.characterClass,
-                token: localStorage.getItem("userToken")
-            })
+        let requestOptions = {}
+        if(this.state.characterClass === "warrior") {
+            requestOptions = {
+                method: "POST",
+                headers: {"Content-type": "Application/json"},
+                body: JSON.stringify({
+                    characterName: this.state.characterName,
+                    characterClass: this.state.characterClass,
+                    characterWeaponName: "Default axe",
+                    characterWeaponDamageFrom: 2,
+                    characterWeaponDamageTo: 4,
+                    characterHealth: 50,
+                    characterHeadName: "Default straw hat",
+                    characterHeadDefence: 0,
+                    characterShouldersName: "Default broken shoulder",
+                    characterShouldersDefence: 0,
+                    characterChestName: "Default t-shirt",
+                    characterChestDefence: 0,
+                    token: localStorage.getItem("userToken")
+                })
+            }
+        } else if(this.state.characterClass === "mage") {
+            requestOptions = {
+                method: "POST",
+                headers: {"Content-type": "Application/json"},
+                body: JSON.stringify({
+                    characterName: this.state.characterName,
+                    characterClass: this.state.characterClass,
+                    characterWeaponName: "Default leaf",
+                    characterWeaponDamageFrom: 1,
+                    characterWeaponDamageTo: 4,
+                    characterHealth: 30,
+                    characterHeadName: "Default hat",
+                    characterHeadDefence: 0,
+                    characterShouldersName: "Default towel",
+                    characterShouldersDefence: 0,
+                    characterChestName: "Default bag",
+                    characterChestDefence: 0,
+                    token: localStorage.getItem("userToken")
+                })
+            }
+        } else if(this.state.characterClass === "paladin") {
+            requestOptions = {
+                method: "POST",
+                headers: {"Content-type": "Application/json"},
+                body: JSON.stringify({
+                    characterName: this.state.characterName,
+                    characterClass: this.state.characterClass,
+                    characterWeaponName: "Default sword",
+                    characterWeaponDamageFrom: 1,
+                    characterWeaponDamageTo: 3,
+                    characterHealth: 40,
+                    characterHeadName: "Default bucket",
+                    characterHeadDefence: 0,
+                    characterShouldersName: "Default nonshoulders",
+                    characterShouldersDefence: 0,
+                    characterChestName: "Default sweater",
+                    characterChestDefence: 0,
+                    token: localStorage.getItem("userToken")
+                })
+            }
         }
+
         fetch(properties.hostUrl + "/createCharacter", requestOptions)
             .then(async response => {
                 if (!response.ok) {
