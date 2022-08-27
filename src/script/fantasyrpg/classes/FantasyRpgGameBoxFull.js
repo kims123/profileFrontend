@@ -97,13 +97,11 @@ class FantasyRpgGameBoxFull extends React.Component {
         return (
             <div className="fantasy-rpg-game-box">
                 <FantasyRpgGameStatsTop/>
-                <hr/>
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
                     <FantasyRpgGameInfo nextMonster={this.state.currentMonster}/>
                 </div>
-                <hr style={{margin: 0}}/>
                 <FantasyRpgPlayerArea/>
             </div>
         )

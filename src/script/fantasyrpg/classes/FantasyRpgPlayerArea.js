@@ -6,7 +6,7 @@ class FantasyRpgPlayerArea extends React.Component {
 
     render() {
         return (
-            <div style={{display: "flex"}}>
+            <div style={{display: "flex", borderTop: "2px solid black", paddingTop: "10px", marginTop: "10px"}}>
                 <div className="fantasy-rpg-player-buttons">
                     <div>
                         <Button name="Attack"/>
@@ -19,7 +19,6 @@ class FantasyRpgPlayerArea extends React.Component {
                 </div>
                 <div className="fantasy-rpg-player-info">
                         <h3 style={{textAlign: "center"}}>Items</h3>
-                        <hr/>
                         <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Head:</div>
                         <div className="fantasy-rpg-stats-column">Head level 1. Defence +1</div>
                         <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Chest:</div>

@@ -6,3 +6,8 @@
     background-color: lightgray;
     padding: 10px;
 }
+
+.fantasy-rpg-headline {
+    border-bottom: 2px solid black;
+    padding: 5px;
+}

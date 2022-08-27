@@ -2,6 +2,10 @@ import React from "react";
 import FantasyRpgButton from "../component/FantasyRpgButton";
 import {properties} from "../resources/properties";
 import '../../../css/fantasyrpg/fantasyrpg-new.game.css'
+import imgDefault from "../../../image/no-go-clipart-11.jpg";
+import imgWarrior from "../../../image/warrior.png";
+import imgMage from "../../../image/mage.png";
+import imgPaladin from "../../../image/paladin.png";
 
 class FantasyRpgStart extends React.Component {
 
@@ -10,7 +14,8 @@ class FantasyRpgStart extends React.Component {
         mageChosen: false,
         paladinChosen: false,
         characterName: "",
-        characterClass: ""
+        characterClass: "",
+        image: imgDefault
     }
 
     componentDidMount() {
@@ -22,6 +27,7 @@ class FantasyRpgStart extends React.Component {
         this.setState({mageChosen: false})
         this.setState({paladinChosen: false})
         this.setState({characterClass: "warrior"})
+        this.setState({image: imgWarrior})
     }
 
     choseMage = () => {
@@ -29,6 +35,7 @@ class FantasyRpgStart extends React.Component {
         this.setState({mageChosen: true})
         this.setState({paladinChosen: false})
         this.setState({characterClass: "mage"})
+        this.setState({image: imgMage})
     }
 
     chosePaladin = () => {
@@ -36,6 +43,7 @@ class FantasyRpgStart extends React.Component {
         this.setState({mageChosen: false})
         this.setState({paladinChosen: true})
         this.setState({characterClass: "paladin"})
+        this.setState({image: imgPaladin})
     }
 
     changeName = e => {
@@ -49,7 +57,7 @@ class FantasyRpgStart extends React.Component {
 
     handleSubmit = () => {
 
-    //    Create character. Send til backend.
+        //    Create character. Send til backend.
 
         const requestOptions = {
             method: "POST",
@@ -75,7 +83,7 @@ class FantasyRpgStart extends React.Component {
                 this.props.showStartMenu(false)
             })
             .catch(error => {
-                if(error.message === 'Failed to fetch') {
+                if (error.message === 'Failed to fetch') {
                     document.getElementById("reg-character-msg").innerHTML = "Feil ved kontakt mot backend. Mest sannsynlig er service ikke på."
                 } else {
                     document.getElementById("reg-character-msg").innerHTML = error
@@ -86,11 +94,16 @@ class FantasyRpgStart extends React.Component {
     render() {
         return (
             <div className="fantasy-rpg-new-game-menu">
-                <div>
-                    <h3>Create character</h3>
-                    <FantasyRpgButton name="Warrior" active={this.state.warriorChosen} onClick={this.choseWarrior}/>
-                    <FantasyRpgButton name="Mage" active={this.state.mageChosen} onClick={this.choseMage}/>
-                    <FantasyRpgButton name="Paladin" active={this.state.paladinChosen} onClick={this.chosePaladin}/>
+                <div style={{display: "inline-flex"}}>
+                    <div>
+                        <h3>Create character</h3>
+                        <FantasyRpgButton name="Warrior" active={this.state.warriorChosen} onClick={this.choseWarrior}/>
+                        <FantasyRpgButton name="Mage" active={this.state.mageChosen} onClick={this.choseMage}/>
+                        <FantasyRpgButton name="Paladin" active={this.state.paladinChosen} onClick={this.chosePaladin}/>
+                    </div>
+                    <div className="fantasy-rpg-new-game-character-photo">
+                        <img src={this.state.image} style={{width: "150px", height: "145px", padding: "5px"}} alt={imgDefault}/>
+                    </div>
                 </div>
 
                 <div>

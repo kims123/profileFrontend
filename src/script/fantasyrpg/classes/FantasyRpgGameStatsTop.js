@@ -1,5 +1,4 @@
 import React from "react";
-import {properties} from "../resources/properties";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
 
 class FantasyRpgGameStatsTop extends React.Component {
@@ -11,7 +10,7 @@ class FantasyRpgGameStatsTop extends React.Component {
     render() {
         return (
             <div>
-                <h3>Health: {this.state.health}</h3>
+                <h3 className="fantasy-rpg-headline">Health: {this.state.health}</h3>
             </div>
         )
     }
