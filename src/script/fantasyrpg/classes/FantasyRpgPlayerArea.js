@@ -20,14 +20,14 @@ class FantasyRpgPlayerArea extends React.Component {
 
                 <div className="fantasy-rpg-player-info">
                     <h3 style={{textAlign: "center"}}>Items</h3>
-                    <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Head:</div>
-                    <div className="fantasy-rpg-stats-column">{this.props.characterHeadName}. Defence: {this.props.characterHeadDefence}</div>
-                    <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Chest:</div>
-                    <div className="fantasy-rpg-stats-column">{this.props.characterChestName}. Defence: {this.props.characterChestDefence}</div>
-                    <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Shoulders:</div>
-                    <div className="fantasy-rpg-stats-column">{this.props.characterShouldersName}. Defence: {this.props.characterChestDefence}</div>
-                    <div className="fantasy-rpg-stats-column" style={{fontWeight: "bold"}}>Weapon:</div>
-                    <div className="fantasy-rpg-stats-column">{this.props.characterWeaponName}. Damage: {this.props.characterWeaponDamageFrom} - {this.props.characterWeaponDamageTo}</div>
+                    <div className="fantasy-rpg-items-column" style={{fontWeight: "bold"}}>Head:</div>
+                    <div className="fantasy-rpg-items-column">{this.props.characterHeadName}. Defence: {this.props.characterHeadDefence}</div>
+                    <div className="fantasy-rpg-items-column" style={{fontWeight: "bold"}}>Chest:</div>
+                    <div className="fantasy-rpg-items-column">{this.props.characterChestName}. Defence: {this.props.characterChestDefence}</div>
+                    <div className="fantasy-rpg-items-column" style={{fontWeight: "bold"}}>Shoulders:</div>
+                    <div className="fantasy-rpg-items-column">{this.props.characterShouldersName}. Defence: {this.props.characterChestDefence}</div>
+                    <div className="fantasy-rpg-items-column" style={{fontWeight: "bold"}}>Weapon:</div>
+                    <div className="fantasy-rpg-items-column">{this.props.characterWeaponName}. Damage: {this.props.characterWeaponDamageFrom} - {this.props.characterWeaponDamageTo}</div>
                 </div>
             </div>
         )
