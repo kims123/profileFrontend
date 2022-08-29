@@ -16,15 +16,33 @@ class FantasyRpgGameBoxFull extends React.Component {
 
     state = {
         currentMonster: []
-        ,playerAction: []
+        , playerAction: []
+        , monsterAction: 0
     }
 
-    setMonster(monster) {
+    setMonster = (monster) => {
         this.setState({currentMonster: monster})
+        this.setMonsterAction(monster)
+    }
+
+    setMonsterAction = (monster) => {
+        let monsterAttack = monster;
+
+        if (this.state.currentMonster.length !== 0) {
+            monsterAttack = this.state.currentMonster
+
+        }
+
+        let attackDamage = Math.floor(Math.random() * (
+            monsterAttack.damageTo - monsterAttack.damageFrom + 1) + monsterAttack.damageFrom);
+
+        this.setState({monsterAction: attackDamage})
     }
 
     UNSAFE_componentWillReceiveProps = () => {
-        this.setMonster(this.fetchNextMonster())
+        if (this.state.currentMonster.length === 0) {
+            this.setMonster(this.fetchNextMonster())
+        }
     }
 
     fetchNextMonster = () => {
@@ -105,9 +123,16 @@ class FantasyRpgGameBoxFull extends React.Component {
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
+                    <button
+                        style={{position: "absolute", top: "460px", left: "460px"}}
+                        onClick={this.setMonsterAction}>
+                        Debug monster attack
+                    </button>
+
                     <FantasyRpgGameInfo
                         nextMonster={this.state.currentMonster}
                         playerAction={this.state.playerAction}
+                        monsterAction={this.state.monsterAction}
                     />
                 </div>
 

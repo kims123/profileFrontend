@@ -16,8 +16,7 @@ class FantasyRpgGameInfo extends React.Component {
 
     UNSAFE_componentWillReceiveProps = (props) => {
         this.setState(props.nextMonster)
-        let attackDamage = Math.floor(Math.random() * (props.nextMonster.damageTo - props.nextMonster.damageFrom + 1) + props.nextMonster.damageFrom);
-        this.setState({lastAttack: attackDamage});
+        this.setState({lastAttack: props.monsterAction});
         this.setState({playerAction: props.playerAction})
     }
 

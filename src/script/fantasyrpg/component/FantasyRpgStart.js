@@ -36,6 +36,7 @@ function FantasyRpgStart() {
         setNewGame(false)
         setContinueGame(true)
         setShowAllCharacters(false)
+        setShowStartMenu(false)
     }
 
     const backToStart = () => {
@@ -63,10 +64,6 @@ function FantasyRpgStart() {
 
                 <div hidden={!newGame}>
                     <FantasyRpgNewGame showStartMenu={changeShowStartMenu} backToStart={backToStart} characterName={changeCharacterName}/>
-                </div>
-
-                <div hidden={!continueGame}>
-                    <FantasyRpgGameScreen characterName={characterName} backToStart={backToStart} refresh={!showStartMenu}/>
                 </div>
             </div>
 
