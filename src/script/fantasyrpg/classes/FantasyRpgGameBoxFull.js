@@ -123,8 +123,9 @@ class FantasyRpgGameBoxFull extends React.Component {
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
-                    <button
-                        style={{position: "absolute", top: "460px", left: "460px"}}
+
+                    <button className="fantasy-rpg-game-button"
+                        style={{position: "absolute", top: "350px", left: "540px", width: "100px"}}
                         onClick={this.setMonsterAction}>
                         Debug monster attack
                     </button>

@@ -6,7 +6,7 @@ class FantasyRpgPlayerArea extends React.Component {
 
 
     attack1 = () => {
-        let attackDamage = Math.floor(Math.random() * (this.props.characterWeaponDamageTo - this.props.characterWeaponDamageFrom) + this.props.characterWeaponDamageFrom);
+        let attackDamage = Math.floor(Math.random() * (this.props.characterWeaponDamageTo - this.props.characterWeaponDamageFrom + 1) + this.props.characterWeaponDamageFrom);
         let att = {
             mode: "meelee",
             damage: attackDamage
