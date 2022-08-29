@@ -16,6 +16,7 @@ class FantasyRpgGameBoxFull extends React.Component {
 
     state = {
         currentMonster: []
+        ,playerAction: []
     }
 
     setMonster(monster) {
@@ -93,6 +94,10 @@ class FantasyRpgGameBoxFull extends React.Component {
         }
     }
 
+    playerAction = (e) => {
+        this.setState({playerAction: e})
+    }
+
     render() {
         return (
             <div className="fantasy-rpg-game-box">
@@ -100,7 +105,10 @@ class FantasyRpgGameBoxFull extends React.Component {
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
-                    <FantasyRpgGameInfo nextMonster={this.state.currentMonster}/>
+                    <FantasyRpgGameInfo
+                        nextMonster={this.state.currentMonster}
+                        playerAction={this.state.playerAction}
+                    />
                 </div>
 
                 <FantasyRpgPlayerArea
@@ -113,7 +121,9 @@ class FantasyRpgGameBoxFull extends React.Component {
                     characterShouldersName={this.props.characterShouldersName}
                     characterShouldersDefence={this.props.characterShouldersDefence}
                     characterChestName={this.props.characterChestName}
-                    characterChestDefence={this.props.characterChestDefence}/>
+                    characterChestDefence={this.props.characterChestDefence}
+                    actionPlayer={this.playerAction}
+                />
             </div>
         )
     }
