@@ -6,7 +6,7 @@ class FantasyRpgGameStatsTop extends React.Component {
     render() {
         return (
             <div>
-                <h3 className="fantasy-rpg-headline">Health: {this.props.characterHealth}</h3>
+                <h3 className="fantasy-rpg-headline">Health: {this.props.characterHealth}/{this.props.characterHealthStart}</h3>
             </div>
         )
     }

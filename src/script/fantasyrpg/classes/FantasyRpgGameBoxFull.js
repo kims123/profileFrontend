@@ -30,11 +30,16 @@ class FantasyRpgGameBoxFull extends React.Component {
 
         if (this.state.currentMonster.length !== 0) {
             monsterAttack = this.state.currentMonster
-
         }
 
         let attackDamage = Math.floor(Math.random() * (
             monsterAttack.damageTo - monsterAttack.damageFrom + 1) + monsterAttack.damageFrom);
+
+        if (this.props.characterHealth - attackDamage < 0) {
+            this.props.changeHealth(0)
+        } else {
+            this.props.changeHealth(this.props.characterHealth - attackDamage)
+        }
 
         this.setState({monsterAction: attackDamage})
     }
@@ -68,7 +73,8 @@ class FantasyRpgGameBoxFull extends React.Component {
             image: img1,
             damageFrom: 1,
             damageTo: 3,
-            health: 50
+            health: 50,
+            healthStart: 50
         }
     }
 
@@ -78,7 +84,8 @@ class FantasyRpgGameBoxFull extends React.Component {
             image: img2,
             damageFrom: 2,
             damageTo: 4,
-            health: 70
+            health: 70,
+            healthStart: 70
         }
     }
 
@@ -88,7 +95,8 @@ class FantasyRpgGameBoxFull extends React.Component {
             image: img3,
             damageFrom: 3,
             damageTo: 6,
-            health: 90
+            health: 90,
+            healthStart: 90
         }
     }
 
@@ -98,7 +106,8 @@ class FantasyRpgGameBoxFull extends React.Component {
             image: img4,
             damageFrom: 5,
             damageTo: 9,
-            health: 140
+            health: 140,
+            healthStart: 140
         }
     }
 
@@ -108,25 +117,38 @@ class FantasyRpgGameBoxFull extends React.Component {
             image: imgDefault,
             damageFrom: 55,
             damageTo: 99,
-            health: 111
+            health: 111,
+            healthStart: 111
         }
     }
 
     playerAction = (e) => {
+        const monster = this.state.currentMonster
+
+        monster.health = monster.health - e.damage
+
+        if (monster.health < 0) {
+            monster.health = 0
+        }
+
+        this.setState({currentMonster: monster})
         this.setState({playerAction: e})
     }
 
     render() {
         return (
             <div className="fantasy-rpg-game-box">
-                <FantasyRpgGameStatsTop characterHealth={this.props.characterHealth}/>
+                <FantasyRpgGameStatsTop
+                    characterHealth={this.props.characterHealth}
+                    characterHealthStart={this.props.characterHealthStart}
+                />
 
                 <div style={{display: "flex"}}>
                     <FantasyRpgMonsterClass nextMonster={this.state.currentMonster}/>
 
                     <button className="fantasy-rpg-game-button"
-                        style={{position: "absolute", top: "350px", left: "540px", width: "100px"}}
-                        onClick={this.setMonsterAction}>
+                            style={{position: "absolute", top: "350px", left: "540px", width: "100px"}}
+                            onClick={this.setMonsterAction}>
                         Debug monster attack
                     </button>
 

@@ -19,12 +19,17 @@ class FantasyRpgGameScreen extends React.Component {
         characterWeaponDamageFrom: 990,
         characterWeaponDamageTo: 990,
         characterHealth: 990,
+        characterHealthStart: 999,
         characterHeadName: "",
         characterHeadDefence: 990,
         characterShouldersName: "",
         characterShouldersDefence: 990,
         characterChestName: "",
         characterChestDefence: 990,
+    }
+
+    changeHealth = (e) => {
+        this.setState({characterHealth: e})
     }
 
     UNSAFE_componentWillReceiveProps = (props) => {
@@ -55,6 +60,7 @@ class FantasyRpgGameScreen extends React.Component {
                 this.setState({characterWeaponDamageFrom: character.characterWeaponDamageFrom})
                 this.setState({characterWeaponDamageTo: character.characterWeaponDamageTo})
                 this.setState({characterHealth: character.characterHealth})
+                this.setState({characterHealthStart: character.characterHealth})
                 this.setState({characterHeadName: character.characterHeadName})
                 this.setState({characterHeadDefence: character.characterHeadDefence})
                 this.setState({characterShouldersName: character.characterShouldersName})
@@ -88,6 +94,8 @@ class FantasyRpgGameScreen extends React.Component {
                         characterWeaponDamageFrom={this.state.characterWeaponDamageFrom}
                         characterWeaponDamageTo={this.state.characterWeaponDamageTo}
                         characterHealth={this.state.characterHealth}
+                        characterHealthStart={this.state.characterHealthStart}
+                        changeHealth={this.changeHealth}
                         characterHeadName={this.state.characterHeadName}
                         characterHeadDefence={this.state.characterHeadDefence}
                         characterShouldersName={this.state.characterShouldersName}
