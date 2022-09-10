@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
 import FantasyRpg from "./fantasyrpg/FantasyRpg";
 import ActionButtonRed from "./profile/component/ActionButtonRed";
+import Tictactoe from "./tictactoe/Tictactoe";
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
     const [showAnnet, setShowAnnet] = useState(false);
     const [showWeatherApplication, setShowWeatherApplication] = useState(false);
     const [showFantasyRpg, setShowFantasyRpg] = useState(false);
+    const [showTicTacToe, setShowTicTacToe] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -75,6 +77,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const visLoggInnForm = () => {
@@ -85,6 +88,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -95,6 +99,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const loggInn = () => {
@@ -106,6 +111,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const loggUt = () => {
@@ -118,6 +124,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
         document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
@@ -129,6 +136,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const visAnnet = () => {
@@ -139,6 +147,7 @@ function App() {
         setShowAnnet(true)
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const visWeatherApplication = () => {
@@ -149,6 +158,7 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(true)
         setShowFantasyRpg(false)
+        setShowTicTacToe(false)
     }
 
     const visFantasyRpg = () => {
@@ -159,8 +169,19 @@ function App() {
         setShowAnnet(false)
         setShowWeatherApplication(false)
         setShowFantasyRpg(true)
+        setShowTicTacToe(false)
     }
 
+    const visTicTacToe = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(true)
+    }
 
     return (
         <div>
@@ -179,7 +200,7 @@ function App() {
                                     style={{display: "inline"}}>
                         <Dropdown.Item onClick={visWeatherApplication}>Weather application</Dropdown.Item>
                         <Dropdown.Item onClick={visFantasyRpg}>Fantasy RPG</Dropdown.Item>
-                        <Dropdown.Item onClick={visWeatherApplication}>Something else</Dropdown.Item>
+                        <Dropdown.Item onClick={visTicTacToe}>Tick tack toe</Dropdown.Item>
                     </DropdownButton>
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
@@ -215,6 +236,10 @@ function App() {
 
             <div hidden={!showFantasyRpg}>
                 <FantasyRpg/>
+            </div>
+
+            <div hidden={!showTicTacToe}>
+                <Tictactoe/>
             </div>
 
         </div>
