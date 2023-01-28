@@ -8,8 +8,6 @@ export function TicTacToeStart() {
     const [gameOver, setGameOver] = useState(false)
 
     useEffect(() => {
-        console.log("Player buttons: " + playerButtons)
-        console.log("Comput buttons: " + computerButtons)
         if (playerButtons.length !== 0 && playerButtons.length + computerButtons.length !== 9 && playerButtons.length > computerButtons.length) {
             computerTurn()
         } else if (playerWon()) {
@@ -81,7 +79,6 @@ export function TicTacToeStart() {
     }
 
     function playerWon() {
-        console.log("Player won? : " + playerButtons)
         if (wincondition1(playerButtons)) {
             return true;
         }
@@ -109,7 +106,6 @@ export function TicTacToeStart() {
     }
 
     function computerWon() {
-        console.log("Computer won? : " + computerButtons)
         if (wincondition1(computerButtons)) {
             return true;
         }

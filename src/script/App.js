@@ -7,13 +7,13 @@ import FormLoggInn from "./profile/classes/FormLoggInn";
 import VisAlleBrukereListe from "./profile/component/VisAlleBrukereListe";
 import Profil from "./profile/classes/Profil";
 import {properties} from "./profile/resources/properties";
-import ActionButton from "./profile/component/ActionButton";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
 import FantasyRpg from "./fantasyrpg/FantasyRpg";
 import ActionButtonRed from "./profile/component/ActionButtonRed";
 import Tictactoe from "./tictactoe/Tictactoe";
+import TodoList from "./todolist/TodoList";
 
 function App() {
 
@@ -68,6 +68,7 @@ function App() {
     const [showWeatherApplication, setShowWeatherApplication] = useState(false);
     const [showFantasyRpg, setShowFantasyRpg] = useState(false);
     const [showTicTacToe, setShowTicTacToe] = useState(false);
+    const [showTodoList, setShowTodoList] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -78,6 +79,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visLoggInnForm = () => {
@@ -89,6 +91,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -100,6 +103,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const loggInn = () => {
@@ -112,6 +116,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const loggUt = () => {
@@ -125,6 +130,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
         document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
@@ -137,6 +143,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visAnnet = () => {
@@ -148,6 +155,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visWeatherApplication = () => {
@@ -159,6 +167,7 @@ function App() {
         setShowWeatherApplication(true)
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visFantasyRpg = () => {
@@ -170,6 +179,7 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(true)
         setShowTicTacToe(false)
+        setShowTodoList(false)
     }
 
     const visTicTacToe = () => {
@@ -181,6 +191,19 @@ function App() {
         setShowWeatherApplication(false)
         setShowFantasyRpg(false)
         setShowTicTacToe(true)
+        setShowTodoList(false)
+    }
+
+    const visTodoList = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(false)
+        setShowTodoList(true)
     }
 
     return (
@@ -201,6 +224,7 @@ function App() {
                         <Dropdown.Item onClick={visWeatherApplication}>Weather application</Dropdown.Item>
                         <Dropdown.Item onClick={visFantasyRpg}>Fantasy RPG</Dropdown.Item>
                         <Dropdown.Item onClick={visTicTacToe}>Tick tack toe</Dropdown.Item>
+                        <Dropdown.Item onClick={visTodoList}>TodoList</Dropdown.Item>
                     </DropdownButton>
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
@@ -240,6 +264,10 @@ function App() {
 
             <div hidden={!showTicTacToe}>
                 <Tictactoe/>
+            </div>
+
+            <div hidden={!showTodoList}>
+                <TodoList/>
             </div>
 
         </div>
