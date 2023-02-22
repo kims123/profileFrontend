@@ -212,7 +212,7 @@ function App() {
 
             <div className="nav-menu">
                 <div hidden={erLoggedIn}>
-                    <Button name="Opprett bruker" onClick={visOpprettBrukerForm}/>
+                    <Button name="Opprett bruker 2" onClick={visOpprettBrukerForm}/>
                     <Button name="Logg inn" onClick={visLoggInnForm}/>
                 </div>
 
