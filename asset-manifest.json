@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/profileFrontend/static/css/main.8c5d5fda.css",
-    "main.js": "/profileFrontend/static/js/main.4d2a97af.js",
+    "main.css": "/profileFrontend/static/css/main.a0e7e9f1.css",
+    "main.js": "/profileFrontend/static/js/main.2f5cc31b.js",
+    "static/media/cartoon-monster-clipart-17.png": "/profileFrontend/static/media/cartoon-monster-clipart-17.8a10d213e04d94e54dac.png",
+    "static/media/angry-monster-clipart-png-3.png": "/profileFrontend/static/media/angry-monster-clipart-png-3.6da39baf5cd821ae7f53.png",
+    "static/media/8-cartoon-monster-vector-5-1.png": "/profileFrontend/static/media/8-cartoon-monster-vector-5-1.0ee2eab5bea59356570b.png",
+    "static/media/mage.png": "/profileFrontend/static/media/mage.aeaebe26dcd76e120597.png",
+    "static/media/cute-monster-clipart-6.png": "/profileFrontend/static/media/cute-monster-clipart-6.72fba141a46ee65366f5.png",
+    "static/media/paladin.png": "/profileFrontend/static/media/paladin.b80506b524da37449a9f.png",
+    "static/media/warrior.png": "/profileFrontend/static/media/warrior.f42215d5e009a3cfb927.png",
+    "static/media/no-go-clipart-11.jpg": "/profileFrontend/static/media/no-go-clipart-11.70293515a21512a8965f.jpg",
     "index.html": "/profileFrontend/index.html",
-    "main.8c5d5fda.css.map": "/profileFrontend/static/css/main.8c5d5fda.css.map",
-    "main.4d2a97af.js.map": "/profileFrontend/static/js/main.4d2a97af.js.map"
+    "main.a0e7e9f1.css.map": "/profileFrontend/static/css/main.a0e7e9f1.css.map",
+    "main.2f5cc31b.js.map": "/profileFrontend/static/js/main.2f5cc31b.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c5d5fda.css",
-    "static/js/main.4d2a97af.js"
+    "static/css/main.a0e7e9f1.css",
+    "static/js/main.2f5cc31b.js"
   ]
 }
