@@ -208,7 +208,7 @@ function App() {
 
     return (
         <div>
-            <h1>Profilside</h1>
+            <h1>Profile app</h1>
 
             <div className="nav-menu">
                 <div hidden={erLoggedIn}>
