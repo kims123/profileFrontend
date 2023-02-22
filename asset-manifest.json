@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/profileFrontend/static/css/main.a0e7e9f1.css",
-    "main.js": "/profileFrontend/static/js/main.2f5cc31b.js",
+    "main.css": "/profileFrontend/static/css/main.64dec51b.css",
+    "main.js": "/profileFrontend/static/js/main.1f095afb.js",
     "static/media/cartoon-monster-clipart-17.png": "/profileFrontend/static/media/cartoon-monster-clipart-17.8a10d213e04d94e54dac.png",
     "static/media/angry-monster-clipart-png-3.png": "/profileFrontend/static/media/angry-monster-clipart-png-3.6da39baf5cd821ae7f53.png",
     "static/media/8-cartoon-monster-vector-5-1.png": "/profileFrontend/static/media/8-cartoon-monster-vector-5-1.0ee2eab5bea59356570b.png",
@@ -11,11 +11,11 @@
     "static/media/warrior.png": "/profileFrontend/static/media/warrior.f42215d5e009a3cfb927.png",
     "static/media/no-go-clipart-11.jpg": "/profileFrontend/static/media/no-go-clipart-11.70293515a21512a8965f.jpg",
     "index.html": "/profileFrontend/index.html",
-    "main.a0e7e9f1.css.map": "/profileFrontend/static/css/main.a0e7e9f1.css.map",
-    "main.2f5cc31b.js.map": "/profileFrontend/static/js/main.2f5cc31b.js.map"
+    "main.64dec51b.css.map": "/profileFrontend/static/css/main.64dec51b.css.map",
+    "main.1f095afb.js.map": "/profileFrontend/static/js/main.1f095afb.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0e7e9f1.css",
-    "static/js/main.2f5cc31b.js"
+    "static/css/main.64dec51b.css",
+    "static/js/main.1f095afb.js"
   ]
 }
