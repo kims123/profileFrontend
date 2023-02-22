@@ -10,3 +10,6 @@
 # HTTPS
 - Github pages krever at man kommuniserer via HTTPS
 - Applikasjon på server må sette opp sertifikat om man skal kommunisere via HTTPS
+
+# URL
+- Endre url for localhost eller annet i properties
