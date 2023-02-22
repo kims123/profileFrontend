@@ -13,3 +13,6 @@
 
 # URL
 - Endre url for localhost eller annet i properties
+
+# Testing
+- Test...
