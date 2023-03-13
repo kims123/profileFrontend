@@ -1,6 +1,6 @@
 import React from "react";
 import FantasyRpgButton from "../component/FantasyRpgButton";
-import {properties} from "../resources/properties";
+import {propertiesFantasy} from "../resources/properties-fantasy";
 import '../../../css/fantasyrpg/fantasyrpg-new.game.css'
 import imgDefault from "../../../image/no-go-clipart-11.jpg";
 import imgWarrior from "../../../image/warrior.png";
@@ -119,7 +119,7 @@ class FantasyRpgStart extends React.Component {
             }
         }
 
-        fetch(properties.hostUrl + "/createCharacter", requestOptions)
+        fetch(propertiesFantasy.hostUrl + "/createCharacter", requestOptions)
             .then(async response => {
                 if (!response.ok) {
                     throw new Error(await response.text())
