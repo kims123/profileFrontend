@@ -1,5 +1,5 @@
 import React from "react";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 
 class FormOpprettBruker extends React.Component {
 
@@ -28,7 +28,7 @@ class FormOpprettBruker extends React.Component {
                     age: this.state.age
                 })
             }
-            fetch(properties.hostUrl + "/createUser", requestOptions)
+            fetch(propertiesProfile.hostUrlProfile + "/createUser", requestOptions)
                 .then(response => response.text())
                 .then(data => document.getElementById("reg-bruker-msg").innerHTML = data)
         }
@@ -60,7 +60,7 @@ class FormOpprettBruker extends React.Component {
                 age: 36
             })
         }
-        fetch(properties.hostUrl + "/createUser", requestOptions)
+        fetch(propertiesProfile.hostUrlProfile + "/createUser", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response
@@ -71,6 +71,7 @@ class FormOpprettBruker extends React.Component {
             .then(() => {
                 document.getElementById("reg-bruker-msg").style.color = "black"
                 document.getElementById("reg-bruker-msg").innerHTML = "Bruker [" + this.state.username + "] opprettet. Samme passord."
+                this.changeName("")
             })
             .catch(error => {
                 document.getElementById("reg-bruker-msg").style.color = "red"
@@ -136,6 +137,7 @@ class FormOpprettBruker extends React.Component {
                 <label>Username: </label><br/>
                 <input type="text" value={this.state.username} required onChange={(e) => {
                     this.changeName(e.target.value)
+                    this.changePassword(e.target.value)
                 }}/>
                 <br/>
 

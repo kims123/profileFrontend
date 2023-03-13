@@ -1,5 +1,5 @@
 import React from "react";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 import ActionButton from "../component/ActionButton";
 
 class FormLoggInn extends React.Component {
@@ -22,7 +22,7 @@ class FormLoggInn extends React.Component {
             headers: {"Content-type": "Application/json"},
             body: JSON.stringify({username: this.state.username, password: this.state.password})
         }
-        fetch(properties.hostUrl + "/login", requestOptions)
+        fetch(propertiesProfile.hostUrlProfile + "/login", requestOptions)
             .then(async response => {
                 if (response.ok) {
                     return response.text()
@@ -31,8 +31,14 @@ class FormLoggInn extends React.Component {
                 }
             })
             .then(data => localStorage.setItem("userToken", data))
+            .then(() => {
+                this.changeUsername("")
+                this.changePassword("")
+            })
             .then(this.props.loggInn)
-            .catch(reason => document.getElementById("login-bruker-msg").innerHTML = reason)
+            .catch(reason => {
+                document.getElementById("login-bruker-msg").innerHTML = reason
+            })
 
     }
 

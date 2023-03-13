@@ -1,6 +1,6 @@
 import React from "react";
 import ChangeProfilepicture from "../component/ChangeProfilepicture";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 import ActionButton from "../component/ActionButton";
 
 class Form extends React.Component {
@@ -38,7 +38,7 @@ class Form extends React.Component {
                     token
                 })
             }
-            fetch(properties.hostUrl + "/changeUser", requestOptions)
+            fetch(propertiesProfile.hostUrlProfile + "/changeUser", requestOptions)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("endre-bruker-msg").innerHTML = "Brukerdata endret"

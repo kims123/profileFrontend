@@ -6,7 +6,7 @@ import FormOpprettBruker from "./profile/classes/FormOpprettBruker";
 import FormLoggInn from "./profile/classes/FormLoggInn";
 import VisAlleBrukereListe from "./profile/component/VisAlleBrukereListe";
 import Profil from "./profile/classes/Profil";
-import {properties} from "./profile/resources/properties";
+import {propertiesProfile} from "./profile/resources/properties-profile";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
@@ -24,7 +24,7 @@ function App() {
             body: localStorage.getItem("userToken")
         }
 
-        fetch(properties.hostUrl + "/isLoggedInn", requestOptions)
+        fetch(propertiesProfile.hostUrlProfile + "/isLoggedInn", requestOptions)
             .then(response => {
                 if (response.ok) {
                     return response;
@@ -43,16 +43,24 @@ function App() {
             body: localStorage.getItem("userToken")
         }
 
-        fetch(properties.hostUrl + "/logoutUser", requestOptions)
+        fetch(propertiesProfile.hostUrlProfile + "/logoutUser", requestOptions)
             .then(response => {
                 if (response.ok) {
+                    console.log("Logget ut OK")
                     return response;
                 } else {
+                    console.log("Logget ut. IKKE OK")
                     throw response;
                 }
             })
-            .then(() => setErLoggedIn(true))
-            .catch(() => setErLoggedIn(false))
+            .then(() => {
+                console.log("Logget ut success!")
+                setErLoggedIn(true)
+            })
+            .catch(() => {
+                console.log("Logget ut failet")
+                setErLoggedIn(false)
+            })
     }
 
     useEffect(() => {
@@ -131,7 +139,6 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
-        document.getElementById("login-bruker-msg").innerHTML = "Skriv inn brukernavn og passord"
     }
 
     const visProfil = () => {

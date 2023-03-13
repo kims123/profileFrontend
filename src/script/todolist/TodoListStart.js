@@ -1,7 +1,7 @@
 import React from "react";
 import '../../css/VisAlleBrukere.css';
 import "../../css/fantasyrpg/fantasyrpg-main.css"
-import {properties} from "./resources/properties";
+import {propertiesTodo} from "./resources/properties-todo";
 
 class TodoListStart extends React.Component {
 
@@ -28,7 +28,7 @@ class TodoListStart extends React.Component {
             })
         }
 
-        fetch(properties.hostUrl + "/addTodo", requestOptions)
+        fetch(propertiesTodo.hostUrl + "/addTodo", requestOptions)
             .then(async response => {
                 if (!response.ok) {
                     throw new Error(await response.text())

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";
 
@@ -17,7 +17,7 @@ function VisAlleBrukereListe(props) {
             body: localStorage.getItem("userToken")
         }
 
-        fetch(properties.hostWeatherAppUrl + "/getWeatherFor?area=" + searchArea, requestOptions)
+        fetch(propertiesProfile.hostWeatherAppUrl + "/getWeatherFor?area=" + searchArea, requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Button from "./Button";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 import ActionButton from "./ActionButton";
 
 function ChangeProfilepicture(props) {
@@ -19,7 +19,7 @@ function ChangeProfilepicture(props) {
                 method: "POST",
                 body: formData
             }
-            fetch(properties.hostUrl + "/changeProfilePicture", requestOptions)
+            fetch(propertiesProfile.hostUrlProfile + "/changeProfilePicture", requestOptions)
                 .then(response => response.text())
                 .then(() => {
                     document.getElementById("endre-bruker-msg").style.color = "black"

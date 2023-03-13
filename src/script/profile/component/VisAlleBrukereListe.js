@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {properties} from "../resources/properties";
+import {propertiesProfile} from "../resources/properties-profile";
 import ProfilInfo from "../classes/ProfilInfo";
 import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";
@@ -32,7 +32,7 @@ function VisAlleBrukereListe(props) {
             body: localStorage.getItem("userToken")
         }
 
-        fetch(properties.hostUrl + "/allUsers", requestOptions)
+        fetch(propertiesProfile.hostUrlProfile + "/allUsers", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response
