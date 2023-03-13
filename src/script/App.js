@@ -32,7 +32,12 @@ function App() {
                     throw response;
                 }
             })
-            .then(() => setErLoggedIn(true))
+            .then(response => {
+                return response.text()
+            })
+            .then(response => {
+                setErLoggedIn(JSON.parse(response))
+            })
             .catch(() => setErLoggedIn(false))
     }
 
