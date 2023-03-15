@@ -1,10 +1,14 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {propertiesTodo} from "./resources/properties-todo";
 import ActionButton from "../profile/component/ActionButton";
 
-function VisAlleTodosListe() {
+function VisAlleTodosListe(props) {
 
     const [todos, setTodos] = useState([])
+
+    useEffect(() => {
+        fetchTodos()
+    }, [props.updateList]);
 
     const fetchTodos = () => {
         const requestOptions = {
@@ -49,9 +53,7 @@ function VisAlleTodosListe() {
                 return response;
             })
             .then(() => {
-                const list = todos.allTodos.filter((o, i) => todoElement !== i);
-                console.log("Slettet todos: ")
-                this.setState({todos: list})
+                fetchTodos()
             })
             .catch(error => {
                 if (error.status === 400) {

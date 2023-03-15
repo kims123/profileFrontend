@@ -6,7 +6,8 @@ import {propertiesTodo} from "./resources/properties-todo";
 class TodoListStart extends React.Component {
 
     state = {
-        inputText: ""
+        inputText: "",
+        updateList: false
     }
 
     changeInputText = e => {
@@ -39,7 +40,8 @@ class TodoListStart extends React.Component {
                 this.setState({inputText: ""})
             })
             .then(() => {
-                this.props.showStartMenu(false)
+                this.setState({updateList: !this.state.updateList});
+                this.props.setUpdateList(!this.state.updateList)
             })
             .catch(error => {
                 if (error.message === 'Failed to fetch') {
