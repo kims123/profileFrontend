@@ -1,5 +1,5 @@
 import React from "react";
-import {propertiesFantasy} from "../resources/properties-fantasy";
+import {propertiesFantasy} from "../../resources/properties-fantasy";
 import "../../../css/fantasyrpg/fantasyrpg-game.css"
 import FantasyRpgGameBoxFull from "./FantasyRpgGameBoxFull";
 import FantasyRpgGameStatsLeft from "./FantasyRpgGameStatsLeft";
@@ -47,7 +47,7 @@ class FantasyRpgGameScreen extends React.Component {
                 token: localStorage.getItem("userToken")
             })
         }
-        fetch(propertiesFantasy.hostUrl + "/getCharacter", requestOptions)
+        fetch(propertiesFantasy.hostUrlFantasyRpg + "/getCharacter", requestOptions)
             .then(response => {
                 return response.json()
             })

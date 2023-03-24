@@ -1,5 +1,5 @@
 import React from "react";
-import {propertiesProfile} from "../resources/properties-profile";
+import {propertiesProfile} from "../../resources/properties-profile";
 import ActionButton from "../component/ActionButton";
 
 class FormLoggInn extends React.Component {

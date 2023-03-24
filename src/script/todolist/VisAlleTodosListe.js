@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {propertiesTodo} from "./resources/properties-todo";
+import {propertiesTodo} from "../resources/properties-todo";
 import ActionButton from "../profile/component/ActionButton";
 
 function VisAlleTodosListe(props) {
@@ -17,7 +17,7 @@ function VisAlleTodosListe(props) {
             body: localStorage.getItem("userToken")
         }
 
-        fetch(propertiesTodo.hostUrl + "/allTodos", requestOptions)
+        fetch(propertiesTodo.hostUrlToDoList + "/allTodos", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response
@@ -45,7 +45,7 @@ function VisAlleTodosListe(props) {
             })
         }
 
-        fetch(propertiesTodo.hostUrl + "/deleteTodo", requestOptions)
+        fetch(propertiesTodo.hostUrlToDoList + "/deleteTodo", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw response

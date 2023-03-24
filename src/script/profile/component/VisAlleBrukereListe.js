@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {propertiesProfile} from "../resources/properties-profile";
+import {propertiesProfile} from "../../resources/properties-profile";
 import ProfilInfo from "../classes/ProfilInfo";
 import '../../../css/VisAlleBrukere.css';
 import ActionButton from "./ActionButton";

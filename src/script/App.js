@@ -6,7 +6,7 @@ import FormOpprettBruker from "./profile/classes/FormOpprettBruker";
 import FormLoggInn from "./profile/classes/FormLoggInn";
 import VisAlleBrukereListe from "./profile/component/VisAlleBrukereListe";
 import Profil from "./profile/classes/Profil";
-import {propertiesProfile} from "./profile/resources/properties-profile";
+import {propertiesProfile} from "./resources/properties-profile";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import WeatherApplication from "./profile/component/WeatherApplication";
@@ -14,6 +14,8 @@ import FantasyRpg from "./fantasyrpg/FantasyRpg";
 import ActionButtonRed from "./profile/component/ActionButtonRed";
 import Tictactoe from "./tictactoe/Tictactoe";
 import TodoList from "./todolist/TodoList";
+import CVpage from "./profile/component/CVpage";
+import ActionButton from "./profile/component/ActionButton";
 
 function App() {
 
@@ -82,6 +84,7 @@ function App() {
     const [showFantasyRpg, setShowFantasyRpg] = useState(false);
     const [showTicTacToe, setShowTicTacToe] = useState(false);
     const [showTodoList, setShowTodoList] = useState(false);
+    const [showCVpage, setShowCVpage] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -93,6 +96,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visLoggInnForm = () => {
@@ -105,6 +109,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -117,6 +122,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const loggInn = () => {
@@ -130,6 +136,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const loggUt = () => {
@@ -144,6 +151,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visProfil = () => {
@@ -156,6 +164,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visAnnet = () => {
@@ -168,6 +177,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visWeatherApplication = () => {
@@ -180,6 +190,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visFantasyRpg = () => {
@@ -192,6 +203,7 @@ function App() {
         setShowFantasyRpg(true)
         setShowTicTacToe(false)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visTicTacToe = () => {
@@ -204,6 +216,7 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(true)
         setShowTodoList(false)
+        setShowCVpage(false)
     }
 
     const visTodoList = () => {
@@ -216,11 +229,25 @@ function App() {
         setShowFantasyRpg(false)
         setShowTicTacToe(false)
         setShowTodoList(true)
+        setShowCVpage(false)
+    }
+
+    const visCVpage = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(false)
+        setShowTodoList(false)
+        setShowCVpage(true)
     }
 
     return (
         <div>
-            <h1>Profile application</h1>
+            <h1>Pronet - Kim Frode Flæthe</h1>
 
             <div className="nav-menu">
                 <div hidden={erLoggedIn}>
@@ -240,6 +267,7 @@ function App() {
                     </DropdownButton>
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
+                {/*<ActionButton name="CV" onClick={visCVpage}/>*/}
 
                 <div hidden={!erLoggedIn} style={{"marginLeft": "auto"}}>
                     <ActionButtonRed name="Logg ut" onClick={loggUt}/>
@@ -280,6 +308,10 @@ function App() {
 
             <div hidden={!showTodoList}>
                 <TodoList/>
+            </div>
+
+            <div hidden={!showCVpage}>
+                <CVpage/>
             </div>
 
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import {propertiesProfile} from "../resources/properties-profile";
+import {propertiesProfile} from "../../resources/properties-profile";
 
 class FormOpprettBruker extends React.Component {
 

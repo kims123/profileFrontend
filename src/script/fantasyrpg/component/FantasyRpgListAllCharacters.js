@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {propertiesFantasy} from "../resources/properties-fantasy";
+import {propertiesFantasy} from "../../resources/properties-fantasy";
 import "../../../css/fantasyrpg/fantasyrpg-list-all-characters.css"
 
 function FantasyRpgStart(props) {
@@ -18,7 +18,7 @@ function FantasyRpgStart(props) {
             headers: {"Content-type": "Application/json"},
             body: localStorage.getItem("userToken")
         }
-        fetch(propertiesFantasy.hostUrl + "/getAllCharacters", requestOptions)
+        fetch(propertiesFantasy.hostUrlFantasyRpg + "/getAllCharacters", requestOptions)
             .then(async response => {
                 if (!response.ok) {
                     throw new Error(await response.text())
@@ -35,7 +35,7 @@ function FantasyRpgStart(props) {
                 }
             })
             .catch(reason => {
-                document.getElementById("all-character-msg").innerHTML = reason
+                document.getElementById("all-character-msg").innerHTML = "[" + reason + "] Application most likely not started. Please restart application and try again"
             })
     }
 

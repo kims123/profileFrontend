@@ -3,7 +3,7 @@ import "../../../css/button.css"
 
 function Button(props) {
     return (
-        <button className="menu-button" onClick={props.onClick}>{props.name} {props.nameto}</button>
+        <button style={{backgroundColor: props.backgroundColor}} className="menu-button" onClick={props.onClick}>{props.name} {props.nameto}</button>
     )
 }
 

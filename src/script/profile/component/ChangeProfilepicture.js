@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Button from "./Button";
-import {propertiesProfile} from "../resources/properties-profile";
+import {propertiesProfile} from "../../resources/properties-profile";
 import ActionButton from "./ActionButton";
 
 function ChangeProfilepicture(props) {
