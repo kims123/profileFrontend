@@ -16,8 +16,20 @@ import Tictactoe from "./tictactoe/Tictactoe";
 import TodoList from "./todolist/TodoList";
 import CVpage from "./profile/component/CVpage";
 import ActionButton from "./profile/component/ActionButton";
+import ResetPasswordRequest from "./profile/component/ResetPasswordRequest";
+import ResetPasswordFerdig from "./profile/component/ResetPasswordFerdig";
+import ResetPassword from "./profile/component/ResetPassword";
 
 function App() {
+
+    useEffect(() => {
+        const windowUrl = window.location.search;
+        const params = new URLSearchParams(windowUrl);
+
+        if(params.get('reset_token')) {
+            visResetPassord()
+        }
+    }, []);
 
     function checkIfLoggedIn() {
         const requestOptions = {
@@ -85,6 +97,9 @@ function App() {
     const [showTicTacToe, setShowTicTacToe] = useState(false);
     const [showTodoList, setShowTodoList] = useState(false);
     const [showCVpage, setShowCVpage] = useState(false);
+    const [showResetPasswordRequest, setResetPasswordRequest] = useState(false);
+    const [showResetPasswordFerdig, setResetPasswordFerdig] = useState(false);
+    const [showResetPassword, setResetPassword] = useState(false);
 
     const visOpprettBrukerForm = () => {
         setShowLoggInnForm(false)
@@ -97,6 +112,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visLoggInnForm = () => {
@@ -110,6 +128,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visAlleBrukereListe = () => {
@@ -123,6 +144,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const loggInn = () => {
@@ -137,6 +161,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const loggUt = () => {
@@ -152,6 +179,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visProfil = () => {
@@ -165,6 +195,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visAnnet = () => {
@@ -178,6 +211,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visWeatherApplication = () => {
@@ -191,6 +227,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visFantasyRpg = () => {
@@ -204,6 +243,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visTicTacToe = () => {
@@ -217,6 +259,9 @@ function App() {
         setShowTicTacToe(true)
         setShowTodoList(false)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visTodoList = () => {
@@ -230,6 +275,9 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(true)
         setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
     }
 
     const visCVpage = () => {
@@ -243,11 +291,63 @@ function App() {
         setShowTicTacToe(false)
         setShowTodoList(false)
         setShowCVpage(true)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
+    }
+
+    const visResetPassordRequest = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(false)
+        setShowTodoList(false)
+        setShowCVpage(false)
+        setResetPasswordRequest(true)
+        setResetPasswordFerdig(false)
+        setResetPassword(false)
+    }
+
+    const visResetPassordFerdig = () => {
+        console.log("Vis reset password ferdig")
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(false)
+        setShowTodoList(false)
+        setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(true)
+        setResetPassword(false)
+    }
+
+    const visResetPassord = () => {
+        setShowLoggInnForm(false)
+        setShowOpprettBrukerForm(false)
+        setVisAlleBrukere(false)
+        setShowProfile(false)
+        setShowAnnet(false)
+        setShowWeatherApplication(false)
+        setShowFantasyRpg(false)
+        setShowTicTacToe(false)
+        setShowTodoList(false)
+        setShowCVpage(false)
+        setResetPasswordRequest(false)
+        setResetPasswordFerdig(false)
+        setResetPassword(true)
     }
 
     return (
         <div>
-            <h1>Pronet - Kim Frode Flæthe</h1>
+            <h1>Kim Frode Flæthe</h1>
 
             <div className="nav-menu">
                 <div hidden={erLoggedIn}>
@@ -267,7 +367,7 @@ function App() {
                     </DropdownButton>
                 </div>
                 <Button name="Annet" onClick={visAnnet}/>
-                {/*<ActionButton name="CV" onClick={visCVpage}/>*/}
+                <ActionButton name="CV" onClick={visCVpage}/>
 
                 <div hidden={!erLoggedIn} style={{"marginLeft": "auto"}}>
                     <ActionButtonRed name="Logg ut" onClick={loggUt}/>
@@ -278,7 +378,7 @@ function App() {
             </div>
 
             <div hidden={!showLoggInnForm}>
-                <FormLoggInn loggInn={loggInn}/>
+                <FormLoggInn loggInn={loggInn} visResetPassord={visResetPassordRequest}/>
             </div>
 
             <div hidden={!visAlleBrukere}>
@@ -312,6 +412,18 @@ function App() {
 
             <div hidden={!showCVpage}>
                 <CVpage/>
+            </div>
+
+            <div hidden={!showResetPasswordRequest}>
+                <ResetPasswordRequest resetPasswordFerdig={visResetPassordFerdig}/>
+            </div>
+
+            <div hidden={!showResetPasswordFerdig}>
+                <ResetPasswordFerdig/>
+            </div>
+
+            <div hidden={!showResetPassword}>
+                <ResetPassword visLoggInn={visLoggInnForm} />
             </div>
 
         </div>

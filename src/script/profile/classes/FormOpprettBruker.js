@@ -56,7 +56,7 @@ class FormOpprettBruker extends React.Component {
             body: JSON.stringify({
                 username: this.state.username,
                 password: this.state.username,
-                email: "q@q",
+                email: "fletn3000@hotmail.com",
                 age: 36
             })
         }

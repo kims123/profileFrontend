@@ -36,10 +36,11 @@ class FormLoggInn extends React.Component {
                 this.changePassword("")
             })
             .then(this.props.loggInn)
-            .catch(reason => {
-                document.getElementById("login-bruker-msg").innerHTML = reason
-            })
+            .catch(() => {
+                document.getElementById("login-bruker-msg").innerHTML = "Feil brukernavn eller passord"
+                document.getElementById("login-bruker-msg").style.color = "red"
 
+            })
     }
 
     render() {
@@ -50,7 +51,7 @@ class FormLoggInn extends React.Component {
             }}>
                 <h2>Logg inn</h2>
 
-                <p id="login-bruker-msg">Her skal det komme en tekst</p>
+                <p id="login-bruker-msg"></p>
 
                 <label>Username:</label> <br/>
                 <input type="text" value={this.state.username} required onChange={e => {
@@ -61,6 +62,8 @@ class FormLoggInn extends React.Component {
                 <input type="password" value={this.state.password} required onChange={e => {
                     this.changePassword(e.target.value)
                 }}/><br/>
+
+                <a href="#" onClick={this.props.visResetPassord} >Glemt brukernavn eller passord </a> <br />
 
                 <ActionButton name="Logg inn" onClick={() => "submit"}/>
 
