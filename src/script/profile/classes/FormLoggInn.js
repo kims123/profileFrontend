@@ -63,8 +63,6 @@ class FormLoggInn extends React.Component {
                     this.changePassword(e.target.value)
                 }}/><br/>
 
-                <a href="#" onClick={this.props.visResetPassord} >Glemt brukernavn eller passord </a> <br />
-
                 <ActionButton name="Logg inn" onClick={() => "submit"}/>
 
             </form>

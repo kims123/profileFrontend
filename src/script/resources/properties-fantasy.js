@@ -1,4 +1,4 @@
 export const propertiesFantasy = {
-    // hostUrl: "http://localhost:8081",
-    hostUrlFantasyRpg: "http://ec2-3-71-78-236.eu-central-1.compute.amazonaws.com:8080",
+    hostUrlFantasyRpgLocalhost: "http://localhost:8081",
+    hostUrlFantasyRpg: "http://ec2-3-64-255-240.eu-central-1.compute.amazonaws.com:8080",
 }
