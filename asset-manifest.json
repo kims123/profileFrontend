@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/profileFrontend/static/css/main.32e900dc.css",
-    "main.js": "/profileFrontend/static/js/main.1d909882.js",
+    "main.js": "/profileFrontend/static/js/main.f0e1496b.js",
     "static/media/cartoon-monster-clipart-17.png": "/profileFrontend/static/media/cartoon-monster-clipart-17.8a10d213e04d94e54dac.png",
     "static/media/angry-monster-clipart-png-3.png": "/profileFrontend/static/media/angry-monster-clipart-png-3.6da39baf5cd821ae7f53.png",
     "static/media/8-cartoon-monster-vector-5-1.png": "/profileFrontend/static/media/8-cartoon-monster-vector-5-1.0ee2eab5bea59356570b.png",
@@ -12,10 +12,10 @@
     "static/media/no-go-clipart-11.jpg": "/profileFrontend/static/media/no-go-clipart-11.70293515a21512a8965f.jpg",
     "index.html": "/profileFrontend/index.html",
     "main.32e900dc.css.map": "/profileFrontend/static/css/main.32e900dc.css.map",
-    "main.1d909882.js.map": "/profileFrontend/static/js/main.1d909882.js.map"
+    "main.f0e1496b.js.map": "/profileFrontend/static/js/main.f0e1496b.js.map"
   },
   "entrypoints": [
     "static/css/main.32e900dc.css",
-    "static/js/main.1d909882.js"
+    "static/js/main.f0e1496b.js"
   ]
 }
