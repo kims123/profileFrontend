@@ -54,12 +54,12 @@ class FormLoggInn extends React.Component {
                 <p id="login-bruker-msg"></p>
 
                 <label>Username:</label> <br/>
-                <input type="text" value={this.state.username} required onChange={e => {
+                <input className="neumorphic-input" type="text" value={this.state.username} required onChange={e => {
                     this.changeUsername(e.target.value)
                 }}/><br/>
 
                 <label>Passord:</label> <br/>
-                <input type="password" value={this.state.password} required onChange={e => {
+                <input className="neumorphic-input" type="password" value={this.state.password} required onChange={e => {
                     this.changePassword(e.target.value)
                 }}/><br/>
 

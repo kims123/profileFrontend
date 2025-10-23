@@ -95,36 +95,36 @@ class FormOpprettBruker extends React.Component {
                 <p id="reg-bruker-msg">Infotekst for registrer bruker</p>
 
                 <label>Username: </label><br/>
-                <input type="text" value={this.state.username} required onChange={(e) => {
+                <input className="neumorphic-input" type="text" value={this.state.username} required onChange={(e) => {
                     this.changeName(e.target.value)
                 }}/>
                 <br/>
 
                 <label>Age:</label><br/>
-                <input type="text" value={this.state.age} required onChange={(e) => {
+                <input className="neumorphic-input" type="text" value={this.state.age} required onChange={(e) => {
                     this.changeAge(e.target.value)
                 }}/>
                 <br/>
 
                 <label>Email:</label> <br/>
-                <input type="email" value={this.state.email} required onChange={(e) => {
+                <input className="neumorphic-input" type="email" value={this.state.email} required onChange={(e) => {
                     this.changeEmail(e.target.value)
                 }}/>
                 <br/>
 
                 <label>Password:</label> <br/>
-                <input type="password" value={this.state.password} required onChange={(e) => {
+                <input className="neumorphic-input" type="password" value={this.state.password} required onChange={(e) => {
                     this.changePassword(e.target.value)
                 }}/>
                 <br/>
 
                 <label>Confirm password:</label> <br/>
-                <input type="password" value={this.state.confPassword} required onChange={(e) => {
+                <input className="neumorphic-input" type="password" value={this.state.confPassword} required onChange={(e) => {
                     this.changeConfPassword(e.target.value)
                 }}/>
                 <br/>
 
-                <button type="submit" value="Knapp submit" className="menu-button">Opprett</button>
+                <button type="submit" value="Knapp submit" className="pink-chicken-button">Opprett</button>
             </form>
 
             <form onSubmit={(e) => {
@@ -135,14 +135,14 @@ class FormOpprettBruker extends React.Component {
                 <h2>Registrer testbruker</h2>
 
                 <label>Username: </label><br/>
-                <input type="text" value={this.state.username} required onChange={(e) => {
+                <input className="neumorphic-input" type="text" value={this.state.username} required onChange={(e) => {
                     this.changeName(e.target.value)
                     this.changePassword(e.target.value)
                 }}/>
                 <br/>
 
 
-                <button type="submit" value="Knapp submit" className="menu-button">Opprett testbruker</button>
+                <button type="submit" value="Knapp submit" className="pink-chicken-button">Opprett testbruker</button>
             </form>
         </div>
     }
